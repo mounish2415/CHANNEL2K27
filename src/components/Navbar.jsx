@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'HOME', href: '#hero' },
@@ -232,40 +232,26 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Action Button & Mobile Toggle */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-          <a
-            id="nav-explore-btn"
-            href="#events"
-            onClick={(e) => handleNavClick(e, '#events')}
-            className="btn btn-primary btn-sm"
-            style={{ display: 'inline-flex', textDecoration: 'none' }}
-          >
-            <span>EXPLORE EVENTS</span>
-            <ArrowRight size={16} />
-          </a>
-
-          {/* Mobile Hamburger Button */}
-          <button
-            id="mobile-nav-toggle"
-            aria-label="Toggle navigation menu"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(23, 105, 224, 0.08)',
-              border: '1px solid rgba(23, 105, 224, 0.2)',
-              borderRadius: '10px',
-              padding: '0.55rem',
-              color: 'var(--primary-blue)',
-              cursor: 'pointer',
-            }}
-            className="mobile-toggle-btn"
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+        {/* Mobile Hamburger Button */}
+        <button
+          id="mobile-nav-toggle"
+          aria-label="Toggle navigation menu"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'rgba(23, 105, 224, 0.08)',
+            border: '1px solid rgba(23, 105, 224, 0.2)',
+            borderRadius: '10px',
+            padding: '0.55rem',
+            color: 'var(--primary-blue)',
+            cursor: 'pointer',
+          }}
+          className="mobile-toggle-btn"
+        >
+          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
 
       {/* Mobile Drawer */}
@@ -309,17 +295,6 @@ export default function Navbar() {
               <span className="pulsing-node" style={{ width: '6px', height: '6px' }} />
             </a>
           ))}
-          <div style={{ paddingTop: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-            <a
-              href="#events"
-              onClick={(e) => handleNavClick(e, '#events')}
-              className="btn btn-primary"
-              style={{ width: '100%', justifyContent: 'center', textDecoration: 'none' }}
-            >
-              <span>EXPLORE EVENTS</span>
-              <ArrowRight size={18} />
-            </a>
-          </div>
         </div>
       )}
     </header>
