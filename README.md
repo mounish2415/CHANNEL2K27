@@ -14,7 +14,7 @@ CHANNEL 2K27 features a light futuristic technology theme frontend built with **
 ### 📌 Participation Rule:
 Every participant can register for **EXACTLY 2 EVENTS**:
 - **1 Technical Event** (Thought Summit / Paper Presentation, DesignDash)
-- **1 Non-Technical Event** (Skribbl.io, Chess Tournament)
+- **1 Non-Technical Event** (Meme Competition, Treasure Hunt)
 
 ---
 
