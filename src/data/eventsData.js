@@ -1,0 +1,121 @@
+export const technicalEvents = [
+  {
+    id: 'thought-summit',
+    num: '01',
+    name: 'THOUGHT SUMMIT',
+    category: 'TECHNICAL',
+    tagline: 'National Paper & Innovation Presentation',
+    fee: 199,
+    feeText: 'INCLUDED IN ₹199 PACKAGE',
+    teamSize: '1 – 5 Members',
+    duration: '8 mins Presentation + 2 mins Q&A',
+    image: '/images/thought_summit.jpg',
+    topics: [
+      'Artificial Intelligence & Machine Learning in Electronics',
+      'VLSI Design & Embedded System Innovations',
+      'IoT, Smart Sensors & Industrial Automation',
+      '5G/6G Wireless Communications & RF Engineering',
+      'Biomedical Signal Processing & Green Energy Electronics',
+    ],
+    rules: [
+      'Participants must bring presentations on a USB drive in standard .pptx or .pdf format.',
+      'A maximum of 12 slides is recommended for the presentation.',
+      'A hard copy of the abstract / paper (IEEE format) must be submitted at the registration desk.',
+      'Evaluation criteria: Originality, Technical Depth, Feasibility, Clarity of Presentation, and Q&A handling.',
+      'Judges decision will be final and binding.',
+    ],
+    prizes: 'Cash Prizes for 1st & 2nd Place + Prestigious Trophy & Merit Certificates',
+    coordinator: 'Student Coordinator: +91 9342620698',
+    shortDesc:
+      'Showcase your visionary engineering ideas, research papers, and technical prototypes in front of an esteemed panel of industry and academic experts.',
+  },
+  {
+    id: 'designdash',
+    num: '02',
+    name: 'DESIGNDASH',
+    category: 'TECHNICAL',
+    tagline: 'UI/UX Design & Prototyping Challenge',
+    fee: 199,
+    feeText: 'INCLUDED IN ₹199 PACKAGE',
+    teamSize: '1 – 2 Members',
+    duration: '3 Challenge Rounds',
+    image: '/images/designdash.jpg',
+    topics: [
+      'UI Recreation & Visual Accuracy',
+      'UX Analysis & User Flow Improvement',
+      'Creative Redesign & Innovation',
+      'Interactive Prototyping using Figma',
+    ],
+    rules: [
+      'Round 1: UI Recreation Challenge — recreate the given app/interface reference with accuracy within the specified time.',
+      'Round 2: Redesign Challenge — improve the interface by applying creative UI/UX solutions and meaningful user-experience enhancements.',
+      'Round 3: Prototype & Presentation — create an interactive Figma prototype and explain the design decisions and improvements.',
+      "Originality: Participants must create their own designs. Direct copying of other designers' work is not allowed.",
+      'Tie-breakers will be decided based on design quality, creativity, usability, and completion speed.',
+    ],
+    prizes: 'Cash Prizes for Top 2 Teams + Trophy & Technical Excellence Certificates',
+    shortDesc:
+      'Step into the world of UI/UX design to recreate existing interfaces, rethink user experiences, and transform familiar app designs into creative, user-friendly digital experiences under a ticking clock.',
+  },
+];
+
+export const nonTechnicalEvents = [
+  {
+    id: 'meme-competition',
+    num: '01',
+    name: 'MEME COMPETITION',
+    category: 'NON-TECHNICAL',
+    tagline: 'Humor, Wit & Engineering Pop-Culture Clash',
+    fee: 199,
+    feeText: 'INCLUDED IN SYMPOSIUM PASS',
+    teamSize: 'Individual / Duo',
+    duration: '45 mins (Creative Meme Rounds)',
+    image: '/images/meme_competition.jpg',
+    topics: [
+      'Engineering & Campus Life Satire',
+      'Tech, AI & Silicon Hardware Trends',
+      'Original Template Innovation',
+      'Caption Warfare & Quick Wit Punchlines',
+    ],
+    rules: [
+      'Themes will be revealed on the spot (electronics, AI, campus life).',
+      'Memes must be 100% original creations made during the competition time.',
+      'No offensive, vulgar, or inappropriate content is permitted.',
+      'Judged on humor, viral appeal, cleverness, and engineering relatability.',
+    ],
+    prizes: 'Winner & Runner Cash Awards + Shield & Merit Certificates',
+    coordinator: 'Student Coordinator: +91 9342620698',
+    shortDesc:
+      'Unleash your creative humor and satire! Battle it out with the wittiest engineering and tech memes to win the ultimate Meme Lord trophy.',
+  },
+  {
+    id: 'treasure-hunt',
+    num: '02',
+    name: 'TREASURE HUNT',
+    category: 'NON-TECHNICAL',
+    tagline: 'Campus Mystery, Decryption & Quest Challenge',
+    fee: 199,
+    feeText: 'INCLUDED IN SYMPOSIUM PASS',
+    teamSize: '2 – 3 Members',
+    duration: '60 mins (Campus-wide Clue Hunt)',
+    image: '/images/treasure_hunt.jpg',
+    topics: [
+      'Cipher Decryption & Circuit Riddles',
+      'Campus Landmark Navigation',
+      'Logical Deduction & Team Collaboration',
+      'Speed, Agility & Strategy',
+    ],
+    rules: [
+      'Teams will receive encrypted clues leading to designated checkpoints across the college.',
+      'Each solved clue reveals the coordinates of the subsequent riddle.',
+      'Tampering with other teams or clues results in immediate disqualification.',
+      'The first team to decode all clues and retrieve the final artifact wins.',
+    ],
+    prizes: 'Championship Trophy + Cash Prizes & Explorer Certificates',
+    coordinator: 'Student Coordinator: +91 9944802235',
+    shortDesc:
+      'Crack cryptic codes, decode technical riddles, and race across the campus against the clock to unearth the hidden treasure.',
+  },
+];
+
+export const allEvents = [...technicalEvents, ...nonTechnicalEvents];
