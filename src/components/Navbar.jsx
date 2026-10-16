@@ -1,50 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { Menu, X, UserCheck } from 'lucide-react';
 
 const navItems = [
-  { label: 'HOME', href: '#hero' },
-  { label: 'ABOUT', href: '#about' },
-  { label: 'EVENTS', href: '#events' },
-  { label: 'AGENDA', href: '#agenda' },
-  { label: 'TEAM', href: '#team' },
-  { label: 'VENUE', href: '#venue' },
-  { label: 'REGISTER', href: '#register' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'HOME', path: '/' },
+  { label: 'ABOUT', path: '/about' },
+  { label: 'EVENTS', path: '/events' },
+  { label: 'AGENDA', path: '/agenda' },
+  { label: 'TEAM', path: '/team' },
+  { label: 'VENUE', path: '/venue' },
+  { label: 'REGISTER', path: '/register' },
+  { label: 'CONTACT', path: '/contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
-
-      const sectionIds = ['hero', 'about', 'events', 'agenda', 'schedule', 'team', 'venue', 'register', 'contact'];
-      const scrollPos = window.scrollY + 120;
-
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(sectionIds[i]);
-          break;
-        }
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
+  // Close mobile drawer on route change
+  useEffect(() => {
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  }, [location.pathname]);
 
   return (
     <header
@@ -57,8 +43,8 @@ export default function Navbar() {
         zIndex: 999,
         transition: 'all 0.3s ease',
         background: scrolled
-          ? 'rgba(255, 255, 255, 0.94)'
-          : 'rgba(245, 250, 255, 0.86)',
+          ? 'rgba(255, 255, 255, 0.95)'
+          : 'rgba(245, 250, 255, 0.88)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         borderBottom: scrolled
@@ -80,9 +66,8 @@ export default function Navbar() {
         }}
       >
         {/* Animated Cyber Logo / Brand */}
-        <a
-          href="#hero"
-          onClick={(e) => handleNavClick(e, '#hero')}
+        <Link
+          to="/"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -119,15 +104,12 @@ export default function Navbar() {
 
               {/* Central Glowing Cyber Crystal Core */}
               <g className="logo-core">
-                {/* Outer Diamond Shield */}
                 <polygon
                   points="22,11 31,22 22,33 13,22"
                   fill="url(#coreGradient)"
                   stroke="#1769e0"
                   strokeWidth="1.2"
                 />
-                
-                {/* Inner Quantum Circuit Nodes */}
                 <circle cx="22" cy="22" r="3.2" fill="#ffffff" />
                 <line x1="22" y1="16" x2="22" y2="19" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
                 <line x1="22" y1="25" x2="22" y2="28" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
@@ -177,60 +159,72 @@ export default function Navbar() {
               <span>APEC</span>
             </div>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <nav
           style={{
             display: 'none',
             alignItems: 'center',
-            gap: '1.4rem',
+            gap: '1.35rem',
           }}
           className="desktop-nav"
         >
-          {navItems.map((item) => {
-            const isActive =
-              (item.href === '#hero' && activeSection === 'hero') ||
-              (item.href === '#about' && activeSection === 'about') ||
-              (item.href === '#events' && activeSection === 'events') ||
-              ((item.href === '#agenda' || item.href === '#schedule') && (activeSection === 'agenda' || activeSection === 'schedule')) ||
-              (item.href === '#team' && activeSection === 'team') ||
-              (item.href === '#venue' && activeSection === 'venue') ||
-              (item.href === '#contact' && activeSection === 'contact');
+          {navItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.path}
+              end={item.path === '/'}
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              style={({ isActive }) => ({
+                fontSize: '0.86rem',
+                fontWeight: 700,
+                textDecoration: 'none',
+                color: isActive ? 'var(--primary-blue)' : 'var(--text-main)',
+                transition: 'all 0.2s ease',
+                position: 'relative',
+                padding: '0.4rem 0.2rem',
+                fontFamily: 'var(--font-heading)',
+                letterSpacing: '0.04em',
+              })}
+            >
+              {({ isActive }) => (
+                <>
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '20px',
+                        height: '2.5px',
+                        borderRadius: '2px',
+                        background: 'var(--grad-tech)',
+                        boxShadow: '0 2px 8px rgba(23, 105, 224, 0.4)',
+                      }}
+                    />
+                  )}
+                </>
+              )}
+            </NavLink>
+          ))}
 
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                style={{
-                  fontSize: '0.86rem',
-                  fontWeight: 700,
-                  textDecoration: 'none',
-                  color: isActive ? 'var(--primary-blue)' : 'var(--text-main)',
-                  transition: 'all 0.2s ease',
-                  position: 'relative',
-                  padding: '0.4rem 0.2rem',
-                }}
-              >
-                {item.label}
-                {isActive && (
-                  <span
-                    style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      width: '18px',
-                      height: '2.5px',
-                      borderRadius: '2px',
-                      background: 'var(--grad-tech)',
-                    }}
-                  />
-                )}
-              </a>
-            );
-          })}
+          {/* Quick Register Button */}
+          <Link
+            to="/register"
+            className="btn btn-primary btn-sm"
+            style={{
+              textDecoration: 'none',
+              marginLeft: '0.5rem',
+              padding: '0.5rem 1.15rem',
+              fontSize: '0.8rem',
+            }}
+          >
+            <UserCheck size={15} />
+            <span>REGISTER NOW</span>
+          </Link>
         </nav>
 
         {/* Mobile Hamburger Button */}
@@ -264,38 +258,62 @@ export default function Navbar() {
             top: '100%',
             left: 0,
             right: 0,
-            background: 'rgba(255, 255, 255, 0.97)',
+            background: 'rgba(255, 255, 255, 0.98)',
             backdropFilter: 'blur(24px)',
             borderBottom: '1px solid rgba(23, 105, 224, 0.2)',
             boxShadow: '0 20px 45px rgba(23, 105, 224, 0.12), 0 0 20px rgba(0, 153, 184, 0.08)',
             padding: '1.25rem 1.5rem 1.75rem 1.5rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.9rem',
+            gap: '0.65rem',
             animation: 'fadeIn 0.2s ease-out',
           }}
         >
           {navItems.map((item) => (
-            <a
+            <NavLink
               key={item.label}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              style={{
+              to={item.path}
+              end={item.path === '/'}
+              onClick={() => setMobileMenuOpen(false)}
+              style={({ isActive }) => ({
                 fontSize: '1rem',
                 fontWeight: 700,
-                color: 'var(--text-main)',
+                color: isActive ? 'var(--primary-blue)' : 'var(--text-main)',
                 textDecoration: 'none',
-                padding: '0.6rem 0.8rem',
-                borderRadius: '8px',
+                padding: '0.65rem 0.85rem',
+                borderRadius: '10px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-              }}
+                background: isActive ? 'rgba(23, 105, 224, 0.08)' : 'transparent',
+                borderLeft: isActive ? '3px solid var(--primary-blue)' : '3px solid transparent',
+                transition: 'all 0.2s ease',
+              })}
             >
-              <span>{item.label}</span>
-              <span className="pulsing-node" style={{ width: '6px', height: '6px' }} />
-            </a>
+              {({ isActive }) => (
+                <>
+                  <span>{item.label}</span>
+                  {isActive ? (
+                    <span className="pulsing-node" style={{ width: '7px', height: '7px' }} />
+                  ) : null}
+                </>
+              )}
+            </NavLink>
           ))}
+
+          <Link
+            to="/register"
+            onClick={() => setMobileMenuOpen(false)}
+            className="btn btn-primary"
+            style={{
+              textDecoration: 'none',
+              marginTop: '0.6rem',
+              justifyContent: 'center',
+            }}
+          >
+            <UserCheck size={18} />
+            <span>REGISTER NOW</span>
+          </Link>
         </div>
       )}
     </header>

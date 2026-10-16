@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const sections = [
-  { id: 'hero', label: 'HOME', code: '01' },
-  { id: 'about', label: 'ABOUT', code: '02' },
-  { id: 'events', label: 'EVENTS', code: '03' },
-  { id: 'agenda', label: 'AGENDA', code: '04' },
-  { id: 'team', label: 'TEAM', code: '05' },
-  { id: 'venue', label: 'VENUE', code: '06' },
-  { id: 'register', label: 'REGISTER', code: '07' },
-  { id: 'contact', label: 'CONTACT', code: '08' },
+const navRoutes = [
+  { path: '/', label: 'HOME', code: '01' },
+  { path: '/about', label: 'ABOUT', code: '02' },
+  { path: '/events', label: 'EVENTS', code: '03' },
+  { path: '/agenda', label: 'AGENDA', code: '04' },
+  { path: '/team', label: 'TEAM', code: '05' },
+  { path: '/venue', label: 'VENUE', code: '06' },
+  { path: '/register', label: 'REGISTER', code: '07' },
+  { path: '/contact', label: 'CONTACT', code: '08' },
 ];
 
 export default function CircuitTracer() {
-  const [activeSection, setActiveSection] = useState('hero');
+  const location = useLocation();
+  const navigate = useNavigate();
   const [scrollPercent, setScrollPercent] = useState(0);
 
   useEffect(() => {
@@ -20,29 +22,14 @@ export default function CircuitTracer() {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
       setScrollPercent(progress);
-
-      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i].id);
-        if (el && el.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i].id);
-          break;
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
-  const scrollTo = (id) => {
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const activeIndex = navRoutes.findIndex((r) => r.path === location.pathname);
 
   return (
     <aside
@@ -54,7 +41,6 @@ export default function CircuitTracer() {
         top: '50%',
         transform: 'translateY(-50%)',
         zIndex: 90,
-        display: 'none', // Handled by media query in CSS or inline check
       }}
     >
       <div
@@ -104,25 +90,25 @@ export default function CircuitTracer() {
               top: 0,
               left: 0,
               width: '100%',
-              height: `${scrollPercent}%`,
+              height: activeIndex >= 0 ? `${(activeIndex / (navRoutes.length - 1)) * 100}%` : `${scrollPercent}%`,
               background: 'linear-gradient(to bottom, #00b8d9, #1769e0, #6c4dff)',
               boxShadow: '0 0 8px #00b8d9',
               borderRadius: '2px',
-              transition: 'height 0.15s ease-out',
+              transition: 'height 0.25s ease-out',
             }}
           />
 
           {/* Node points along the circuit track */}
-          {sections.map((sec, idx) => {
-            const isActive = activeSection === sec.id;
-            const topPercent = (idx / (sections.length - 1)) * 100;
+          {navRoutes.map((route, idx) => {
+            const isActive = location.pathname === route.path;
+            const topPercent = (idx / (navRoutes.length - 1)) * 100;
 
             return (
               <button
-                key={sec.id}
-                onClick={() => scrollTo(sec.id)}
-                title={`${sec.code} - ${sec.label}`}
-                aria-label={`Jump to ${sec.label}`}
+                key={route.path}
+                onClick={() => navigate(route.path)}
+                title={`${route.code} - ${route.label}`}
+                aria-label={`Navigate to ${route.label}`}
                 style={{
                   position: 'absolute',
                   top: `${topPercent}%`,
@@ -140,7 +126,7 @@ export default function CircuitTracer() {
                     : 'none',
                   cursor: 'pointer',
                   padding: 0,
-                  transition: 'all 0.25s ease',
+                  transition: 'all 0.2s ease',
                   zIndex: 2,
                 }}
               />
@@ -150,14 +136,14 @@ export default function CircuitTracer() {
 
         <div
           style={{
-            fontSize: '0.68rem',
+            fontSize: '0.62rem',
             fontFamily: 'var(--font-mono)',
-            fontWeight: 700,
-            color: 'var(--violet)',
+            fontWeight: 800,
+            color: 'var(--text-muted)',
             marginTop: '0.2rem',
           }}
         >
-          {Math.round(scrollPercent)}%
+          {String(Math.round(scrollPercent)).padStart(2, '0')}%
         </div>
       </div>
     </aside>

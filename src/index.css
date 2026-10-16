@@ -531,4 +531,37 @@ textarea::placeholder {
   filter: drop-shadow(0 2px 6px rgba(23, 105, 224, 0.3));
 }
 
+/* Page Transition & Active Nav Effects */
+.page-transition {
+  animation: pageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quick-link-hover {
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.quick-link-hover:hover {
+  gap: 0.75rem !important;
+}
+
+.hover-glow {
+  transition: all var(--transition-normal);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 16px 45px rgba(23, 105, 224, 0.14), 0 0 24px rgba(0, 153, 184, 0.1) !important;
+  border-color: rgba(23, 105, 224, 0.35) !important;
+}
+
 

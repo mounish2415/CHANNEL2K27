@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Compass, ShieldCheck, Award, UserCheck, Clock } from 'lucide-react';
 
 export default function Hero() {
@@ -250,16 +251,9 @@ export default function Hero() {
               marginBottom: '2.5rem',
             }}
           >
-            <a
+            <Link
               id="hero-register-btn"
-              href="#register"
-              onClick={(e) => {
-                e.preventDefault();
-                const target = document.getElementById('register');
-                if (target) {
-                  target.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+              to="/register"
               className="btn btn-primary btn-lg"
               style={{
                 textDecoration: 'none',
@@ -273,26 +267,26 @@ export default function Hero() {
             >
               <UserCheck size={20} />
               <span>REGISTER NOW</span>
-            </a>
+            </Link>
 
-            <a
+            <Link
               id="hero-explore-btn"
-              href="#events"
+              to="/events"
               className="btn btn-secondary btn-lg"
               style={{ textDecoration: 'none' }}
             >
               <Compass size={20} />
               <span>EXPLORE EVENTS</span>
-            </a>
+            </Link>
 
-            <a
-              href="#agenda"
+            <Link
+              to="/agenda"
               className="btn btn-secondary btn-lg"
               style={{ textDecoration: 'none' }}
             >
               <Calendar size={19} />
               <span>VIEW AGENDA</span>
-            </a>
+            </Link>
           </div>
 
           {/* Institutional Accreditation Pill Banner */}

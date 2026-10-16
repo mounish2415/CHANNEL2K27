@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Cpu,
   Mail,
@@ -94,13 +95,14 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Events', href: '#events' },
-    { label: 'Agenda', href: '#agenda' },
-    { label: 'Team', href: '#team' },
-    { label: 'Venue', href: '#venue' },
-    { label: 'Register', href: '#register' },
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Events', path: '/events' },
+    { label: 'Agenda', path: '/agenda' },
+    { label: 'Team', path: '/team' },
+    { label: 'Venue', path: '/venue' },
+    { label: 'Register', path: '/register' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -226,8 +228,8 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.path}
                     style={{
                       fontSize: '0.9rem',
                       color: 'var(--text-muted)',
@@ -238,7 +240,7 @@ export default function Footer() {
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
                   >
                     → {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

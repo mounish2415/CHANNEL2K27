@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import CanvasBackground from './components/CanvasBackground';
 import CircuitTracer from './components/CircuitTracer';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Countdown from './components/Countdown';
-import About from './components/About';
-import Associations from './components/Associations';
-import Events from './components/Events';
-import Schedule from './components/Schedule';
-import Team from './components/Team';
-import Venue from './components/Venue';
 import Footer from './components/Footer';
 import EventModal from './components/EventModal';
 import ChipLoader from './components/ChipLoader';
-import RegisterSection from './components/RegisterSection';
+import ScrollToTop from './components/ScrollToTop';
+
+// Page Components
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import EventsPage from './pages/EventsPage';
+import AgendaPage from './pages/AgendaPage';
+import TeamPage from './pages/TeamPage';
+import VenuePage from './pages/VenuePage';
+import RegisterPage from './pages/RegisterPage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   const [bootLoading, setBootLoading] = useState(true);
@@ -41,43 +44,36 @@ export default function App() {
       {/* Floating Circuit Navigation HUD */}
       <CircuitTracer />
 
-      {/* Sticky Glass Navbar */}
+      {/* Automatic Scroll To Top on Route Navigation */}
+      <ScrollToTop />
+
+      {/* Consistent Glass Navbar across all pages */}
       <Navbar />
 
-      {/* Main Content Sections */}
-      <main>
-        {/* Hero Section */}
-        <Hero />
+      {/* Main Routed Page Content */}
+      <main style={{ minHeight: '80vh' }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route
+            path="/events"
+            element={<EventsPage onOpenDetails={handleOpenEventModal} />}
+          />
+          <Route path="/agenda" element={<AgendaPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/venue" element={<VenuePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/contact" element={<ContactPage />} />
 
-        {/* Live Event Countdown */}
-        <Countdown />
-
-        {/* About Section */}
-        <About />
-
-        {/* Collaborating Associations & Logos */}
-        <Associations />
-
-        {/* Technical & Non-Technical Events */}
-        <Events onOpenDetails={handleOpenEventModal} />
-
-        {/* Event Schedule Timeline */}
-        <Schedule />
-
-        {/* Organizing Team */}
-        <Team />
-
-        {/* Venue Location & Travel Guide */}
-        <Venue />
-
-        {/* Official Registration Portal & Pass Gateway */}
-        <RegisterSection />
+          {/* Fallback route to prevent any 404s on unknown routes */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
-      {/* Footer */}
+      {/* Persistent Global Footer */}
       <Footer />
 
-      {/* Event Details Interactive Modal */}
+      {/* Global Interactive Event Details Modal */}
       {activeModalEvent && (
         <EventModal
           event={activeModalEvent}
