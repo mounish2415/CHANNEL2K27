@@ -24,7 +24,7 @@ Official website for **CHANNEL 2K27**, a premier National Level Technical Sympos
 2. **DesignDash** — UI/UX Design & Figma Prototyping Challenge
 
 ### Non-Technical Events
-1. **Meme Competition** — Humor, Wit & Engineering Satire Clash
+1. **Connections** — Visual Clues, Mind Association & Lateral Thinking Clash
 2. **Treasure Hunt** — Campus Mystery, Decryption & Quest Challenge
 
 ---

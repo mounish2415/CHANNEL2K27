@@ -113,7 +113,7 @@ export default function RegisterSection() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {[
                 'Participation in 1 Technical Event (Thought Summit or DesignDash)',
-                'Participation in 1 Non-Technical Event (Meme Competition or Treasure Hunt)',
+                'Participation in 1 Non-Technical Event (Connections or Treasure Hunt)',
                 'Full Dining (Morning Refreshments, Buffet Lunch & High Tea)',
                 'Official Symposium Kit, Delegate ID Badge & Folder',
                 'Merit Certificates & Cash Prizes for Winners (1st & 2nd Place)',

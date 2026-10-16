@@ -56,10 +56,10 @@ const agendaData = [
     time: '01:20 PM',
     timeSlot: '01:20 PM – 03:20 PM',
     title: 'NON-TECHNICAL EVENTS',
-    subtitle: 'Meme Competition and Treasure Hunt',
+    subtitle: 'Connections and Treasure Hunt',
     category: 'NON-TECHNICAL',
     venue: 'Seminar Hall 2 & Campus Grounds',
-    desc: 'Non-technical events track featuring Meme Competition (Engineering Satire & Pop-Culture) and Treasure Hunt (Campus Mystery Decryption).',
+    desc: 'Non-technical events track featuring Connections (Visual Clues & Lateral Thinking) and Treasure Hunt (Campus Mystery Decryption).',
     accent: '#e94eff',
   },
   {
