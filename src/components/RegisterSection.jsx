@@ -23,7 +23,7 @@ export default function RegisterSection() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <section id="register" className="section section-wide" style={{ position: 'relative', zIndex: 2, paddingTop: '2rem', paddingBottom: '5rem' }}>
+    <section id="register" className="section section-wide" style={{ position: 'relative', zIndex: 2, paddingTop: '2rem', paddingBottom: '5rem', scrollMarginTop: '80px' }}>
       <div className="section-header">
         <div className="section-pill" style={{ background: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.3)' }}>
           <Sparkles size={14} color="#10b981" />

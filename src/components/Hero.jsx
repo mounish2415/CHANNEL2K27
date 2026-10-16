@@ -1,6 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, Compass, ShieldCheck, Award, UserCheck, Clock, ExternalLink } from 'lucide-react';
-import { REGISTRATION_URL } from '../data/registrationConfig';
+import { Calendar, MapPin, Compass, ShieldCheck, Award, UserCheck, Clock } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -253,9 +252,14 @@ export default function Hero() {
           >
             <a
               id="hero-register-btn"
-              href={REGISTRATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#register"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.getElementById('register');
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="btn btn-primary btn-lg"
               style={{
                 textDecoration: 'none',
@@ -269,7 +273,6 @@ export default function Hero() {
             >
               <UserCheck size={20} />
               <span>REGISTER NOW</span>
-              <ExternalLink size={16} />
             </a>
 
             <a
