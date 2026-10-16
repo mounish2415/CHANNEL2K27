@@ -148,6 +148,11 @@ const facultyCommittees = [
         year: 'Final Year – Department of ECE',
         role: 'Student In-Charge',
       },
+      {
+        name: 'Barathkumar R',
+        year: 'Final Year – Department of ECE',
+        role: 'Student In-Charge',
+      },
     ],
   },
   {

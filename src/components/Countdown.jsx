@@ -11,8 +11,8 @@ export default function Countdown() {
   const [copiedReminder, setCopiedReminder] = useState(false);
 
   useEffect(() => {
-    // Target Date: 3 November 2026 09:00:00 AM IST
-    const targetDate = new Date('2026-11-03T09:00:00+05:30').getTime();
+    // Registration Deadline: 1 November 2026 11:59:59 PM IST
+    const targetDate = new Date('2026-11-01T23:59:59+05:30').getTime();
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -135,7 +135,7 @@ export default function Countdown() {
                   textTransform: 'uppercase',
                 }}
               >
-                // SEMICONDUCTOR_CLOCK_ARRAY • 2.7 GHz
+                // REGISTRATION_GATEWAY • COUNTDOWN
               </div>
               <h2
                 style={{
@@ -145,7 +145,7 @@ export default function Countdown() {
                   letterSpacing: '-0.02em',
                 }}
               >
-                THE FUTURE STARTS IN…
+                REGISTRATION CLOSES IN…
               </h2>
             </div>
           </div>
@@ -276,11 +276,11 @@ export default function Countdown() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span className="pulsing-node" style={{ width: '6px', height: '6px' }} />
-            <span>Target: Tuesday, November 3, 2026 • 09:00 AM IST</span>
+            <span>Registration Deadline: Sunday, November 1, 2026 • 11:59 PM IST</span>
           </div>
 
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--primary-blue)', fontWeight: 600 }}>
-            LIVE SYNC // APEC CAMPUS
+            EVENT DATE // NOV 03, 2026
           </div>
         </div>
       </div>

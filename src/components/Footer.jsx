@@ -100,6 +100,7 @@ export default function Footer() {
     { label: 'Agenda', href: '#agenda' },
     { label: 'Team', href: '#team' },
     { label: 'Venue', href: '#venue' },
+    { label: 'Register', href: '#register' },
   ];
 
   return (

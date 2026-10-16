@@ -13,6 +13,7 @@ import Venue from './components/Venue';
 import Footer from './components/Footer';
 import EventModal from './components/EventModal';
 import ChipLoader from './components/ChipLoader';
+import RegisterSection from './components/RegisterSection';
 
 export default function App() {
   const [bootLoading, setBootLoading] = useState(true);
@@ -68,6 +69,9 @@ export default function App() {
 
         {/* Venue Location & Travel Guide */}
         <Venue />
+
+        {/* Official Registration Portal & Pass Gateway */}
+        <RegisterSection />
       </main>
 
       {/* Footer */}

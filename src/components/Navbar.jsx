@@ -8,6 +8,7 @@ const navItems = [
   { label: 'AGENDA', href: '#agenda' },
   { label: 'TEAM', href: '#team' },
   { label: 'VENUE', href: '#venue' },
+  { label: 'REGISTER', href: '#register' },
   { label: 'CONTACT', href: '#contact' },
 ];
 
@@ -20,7 +21,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      const sectionIds = ['hero', 'about', 'events', 'agenda', 'schedule', 'team', 'venue', 'contact'];
+      const sectionIds = ['hero', 'about', 'events', 'agenda', 'schedule', 'team', 'venue', 'register', 'contact'];
       const scrollPos = window.scrollY + 120;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {

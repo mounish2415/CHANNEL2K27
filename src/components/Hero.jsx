@@ -1,5 +1,6 @@
 import React from 'react';
-import { Calendar, MapPin, Compass, ShieldCheck, Award } from 'lucide-react';
+import { Calendar, MapPin, Compass, ShieldCheck, Award, UserCheck, Clock, ExternalLink } from 'lucide-react';
+import { REGISTRATION_URL } from '../data/registrationConfig';
 
 export default function Hero() {
   return (
@@ -164,6 +165,43 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* Registration Deadline Card */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.75rem 1.2rem',
+                background: 'rgba(255, 255, 255, 0.92)',
+                border: '1px solid rgba(234, 88, 12, 0.22)',
+                borderRadius: '16px',
+                boxShadow: '0 8px 24px rgba(234, 88, 12, 0.08)',
+              }}
+            >
+              <div
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '10px',
+                  background: 'rgba(234, 88, 12, 0.12)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#ea580c',
+                }}
+              >
+                <Clock size={20} />
+              </div>
+              <div style={{ textAlign: 'left' }}>
+                <div style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: 600, textTransform: 'uppercase' }}>
+                  Registration Closes
+                </div>
+                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#c2410c', fontFamily: 'var(--font-heading)' }}>
+                  01 NOVEMBER 2026
+                </div>
+              </div>
+            </div>
+
             {/* Venue Card */}
             <div
               style={{
@@ -214,8 +252,30 @@ export default function Hero() {
             }}
           >
             <a
-              href="#events"
+              id="hero-register-btn"
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary btn-lg"
+              style={{
+                textDecoration: 'none',
+                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                boxShadow: '0 6px 20px rgba(16, 185, 129, 0.35)',
+                border: '1px solid rgba(16, 185, 129, 0.4)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+              }}
+            >
+              <UserCheck size={20} />
+              <span>REGISTER NOW</span>
+              <ExternalLink size={16} />
+            </a>
+
+            <a
+              id="hero-explore-btn"
+              href="#events"
+              className="btn btn-secondary btn-lg"
               style={{ textDecoration: 'none' }}
             >
               <Compass size={20} />

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { X, Trophy, Users, Clock, CheckCircle, Tag, ShieldAlert } from 'lucide-react';
+import { X, Trophy, Users, Clock, CheckCircle, Tag, ShieldAlert, UserCheck, ExternalLink } from 'lucide-react';
+import { REGISTRATION_URL } from '../data/registrationConfig';
 
 export default function EventModal({ event, onClose }) {
   useEffect(() => {
@@ -294,10 +295,30 @@ export default function EventModal({ event, onClose }) {
           )}
 
           {/* Action CTA */}
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
-            <button onClick={onClose} className="btn btn-primary" style={{ minWidth: '130px', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'flex-end' }}>
+            <button onClick={onClose} className="btn btn-secondary" style={{ minWidth: '100px', justifyContent: 'center' }}>
               <span>CLOSE</span>
             </button>
+
+            <a
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{
+                textDecoration: 'none',
+                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                borderColor: '#10b981',
+                boxShadow: '0 4px 14px rgba(16, 185, 129, 0.35)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+              }}
+            >
+              <UserCheck size={18} />
+              <span>REGISTER (₹150 PASS)</span>
+              <ExternalLink size={15} />
+            </a>
           </div>
         </div>
       </div>

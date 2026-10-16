@@ -7,7 +7,8 @@ const sections = [
   { id: 'agenda', label: 'AGENDA', code: '04' },
   { id: 'team', label: 'TEAM', code: '05' },
   { id: 'venue', label: 'VENUE', code: '06' },
-  { id: 'contact', label: 'CONTACT', code: '07' },
+  { id: 'register', label: 'REGISTER', code: '07' },
+  { id: 'contact', label: 'CONTACT', code: '08' },
 ];
 
 export default function CircuitTracer() {

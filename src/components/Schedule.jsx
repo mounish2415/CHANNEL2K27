@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Clock, MapPin, Calendar } from 'lucide-react';
+import { Clock, Calendar } from 'lucide-react';
 
 const agendaData = [
   {
@@ -302,30 +302,11 @@ export default function Schedule() {
                     fontSize: '0.88rem',
                     color: 'var(--text-muted)',
                     lineHeight: 1.55,
-                    marginBottom: '0.85rem',
+                    marginBottom: 0,
                   }}
                 >
                   {item.desc}
                 </p>
-
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                    fontSize: '0.78rem',
-                    color: 'var(--text-muted)',
-                    fontFamily: 'var(--font-mono)',
-                    fontWeight: 600,
-                    background: 'rgba(23, 105, 224, 0.05)',
-                    padding: '0.3rem 0.65rem',
-                    borderRadius: '6px',
-                    border: '1px solid rgba(23, 105, 224, 0.1)',
-                  }}
-                >
-                  <MapPin size={14} color="var(--primary-blue)" />
-                  <span>{item.venue}</span>
-                </div>
               </div>
             </div>
           ))}
