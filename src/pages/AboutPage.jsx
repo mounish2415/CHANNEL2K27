@@ -15,23 +15,7 @@ import Associations from '../components/Associations';
 
 export default function AboutPage() {
   return (
-    <div className="page-transition" style={{ paddingTop: '5.5rem' }}>
-      {/* Page Header */}
-      <div className="section" style={{ paddingBottom: '1rem', paddingTop: '1.5rem' }}>
-        <div className="section-header" style={{ marginBottom: '1.5rem' }}>
-          <div className="section-pill">
-            <Building2 size={14} />
-            <span>INSTITUTION & SOCIETY PROFILE</span>
-          </div>
-          <h1 className="section-title">
-            ABOUT <span className="gradient-text">CHANNEL 2K27</span>
-          </h1>
-          <p className="section-subtitle">
-            Organized by the Society of Electronics and Communication Engineering (S.E.C.E.), Adhiparasakthi Engineering College, Melmaruvathur.
-          </p>
-        </div>
-      </div>
-
+    <div className="page-transition" style={{ paddingTop: '4rem' }}>
       {/* Main About Component */}
       <About />
 

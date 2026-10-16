@@ -12,23 +12,7 @@ import Team from '../components/Team';
 
 export default function TeamPage() {
   return (
-    <div className="page-transition" style={{ paddingTop: '5.5rem' }}>
-      {/* Page Title Header */}
-      <div className="section" style={{ paddingBottom: '0.5rem', paddingTop: '1.5rem' }}>
-        <div className="section-header" style={{ marginBottom: '1rem' }}>
-          <div className="section-pill">
-            <Users size={14} />
-            <span>ORGANIZING BODY</span>
-          </div>
-          <h1 className="section-title">
-            ORGANIZING <span className="gradient-text">COMMITTEE</span>
-          </h1>
-          <p className="section-subtitle">
-            Meet the faculty patrons, conveners, student coordinators, and committee leads driving CHANNEL 2K27.
-          </p>
-        </div>
-      </div>
-
+    <div className="page-transition" style={{ paddingTop: '4rem' }}>
       {/* Main Team Component */}
       <Team />
 

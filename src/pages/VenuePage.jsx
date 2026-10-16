@@ -16,23 +16,7 @@ export default function VenuePage() {
   const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=12.436921,79.821985';
 
   return (
-    <div className="page-transition" style={{ paddingTop: '5.5rem' }}>
-      {/* Page Title Header */}
-      <div className="section" style={{ paddingBottom: '0.5rem', paddingTop: '1.5rem' }}>
-        <div className="section-header" style={{ marginBottom: '1rem' }}>
-          <div className="section-pill">
-            <Compass size={14} />
-            <span>CAMPUS LOCATION & REACHABILITY</span>
-          </div>
-          <h1 className="section-title">
-            VENUE & <span className="gradient-text">DIRECTIONS</span>
-          </h1>
-          <p className="section-subtitle">
-            All events will be hosted at the modern <strong>APEC Central Library</strong>, Adhiparasakthi Engineering College, Melmaruvathur.
-          </p>
-        </div>
-      </div>
-
+    <div className="page-transition" style={{ paddingTop: '4rem' }}>
       {/* Main Venue Component */}
       <Venue />
 

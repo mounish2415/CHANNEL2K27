@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Phone, 
   Mail, 
   Globe, 
   MapPin, 
-  Send, 
   CheckCircle2, 
-  AlertCircle, 
   Sparkles, 
   ExternalLink,
   MessageCircle,
   Building,
-  UserCheck
+  UserCheck,
+  ShieldCheck,
+  Award,
+  Navigation
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { REGISTRATION_URL } from '../data/registrationConfig';
 
 const InstagramIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,17 +51,6 @@ const WhatsAppIcon = () => (
 );
 
 export default function ContactPage() {
-  const [inquiry, setInquiry] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: 'Event Query',
-    message: '',
-  });
-
-  const [formSent, setFormSent] = useState(false);
-  const [errorMsg, setErrorMsg] = useState('');
-
   const keyContacts = [
     {
       role: 'Head of the Department',
@@ -136,29 +128,13 @@ export default function ContactPage() {
     },
   ];
 
-  const handleInquirySubmit = (e) => {
-    e.preventDefault();
-    if (!inquiry.name.trim() || !inquiry.email.trim() || !inquiry.message.trim()) {
-      setErrorMsg('Please fill in your name, email, and message.');
-      return;
-    }
-
-    setErrorMsg('');
-    setFormSent(true);
-    setInquiry({
-      name: '',
-      email: '',
-      phone: '',
-      subject: 'Event Query',
-      message: '',
-    });
-  };
+  const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=12.436921,79.821985';
 
   return (
     <div className="page-transition" style={{ paddingTop: '5.5rem' }}>
       {/* Page Title Header */}
-      <div className="section" style={{ paddingBottom: '1rem', paddingTop: '1.5rem' }}>
-        <div className="section-header" style={{ marginBottom: '1.5rem' }}>
+      <div className="section" style={{ paddingBottom: '1.5rem', paddingTop: '1.5rem' }}>
+        <div className="section-header" style={{ marginBottom: '2.5rem' }}>
           <div className="section-pill">
             <Phone size={14} />
             <span>COMMUNICATIONS & CONTACT DESK</span>
@@ -170,16 +146,14 @@ export default function ContactPage() {
             Get in touch with the CHANNEL 2K27 organizing committee, coordinators, and college administration.
           </p>
         </div>
-      </div>
 
-      <div className="section" style={{ paddingTop: 0, paddingBottom: '5rem' }}>
         {/* Key Coordinators Grid */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '1.75rem',
-            marginBottom: '3.5rem',
+            marginBottom: '3rem',
           }}
         >
           {keyContacts.map((contact, idx) => (
@@ -284,304 +258,111 @@ export default function ContactPage() {
           ))}
         </div>
 
-        {/* 2-Column: Inquiry Message Form & Social Media Channels */}
+        {/* 2-Column: Social Channels & Campus Location Details */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '2.5rem',
+            marginBottom: '3rem',
           }}
         >
-          {/* Quick Inquiry Form */}
+          {/* Social Media Links Card */}
           <div
             className="glass-card"
             style={{
-              padding: '2.5rem',
-              borderRadius: '26px',
-              border: '1.5px solid rgba(23, 105, 224, 0.18)',
-              background: '#ffffff',
+              padding: '2.25rem',
+              borderRadius: '24px',
+              border: '1.5px solid rgba(23, 105, 224, 0.16)',
             }}
           >
-            <div style={{ marginBottom: '1.5rem' }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.45rem',
-                  fontSize: '0.72rem',
-                  fontFamily: 'var(--font-mono)',
-                  color: 'var(--primary-blue)',
-                  fontWeight: 800,
-                  marginBottom: '0.5rem',
-                }}
-              >
-                <Send size={13} />
-                <span>DIRECT MESSAGING</span>
-              </div>
-              <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-                Send Us an Inquiry
-              </h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                Have questions regarding registration, events, or transport? Drop a message and our coordinators will get back to you.
-              </p>
-            </div>
+            <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.4rem' }}>
+              Social Channels & Community
+            </h3>
+            <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+              Connect with our delegate community and stay updated with live announcements:
+            </p>
 
-            {formSent && (
-              <div
-                style={{
-                  padding: '1rem',
-                  borderRadius: '12px',
-                  background: 'rgba(16, 185, 129, 0.1)',
-                  border: '1px solid rgba(16, 185, 129, 0.3)',
-                  color: '#065f46',
-                  fontSize: '0.88rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  marginBottom: '1.25rem',
-                }}
-              >
-                <CheckCircle2 size={18} color="#10b981" />
-                <span>Thank you! Your message has been received. Our team will contact you shortly.</span>
-              </div>
-            )}
-
-            {errorMsg && (
-              <div
-                style={{
-                  padding: '0.85rem',
-                  borderRadius: '12px',
-                  background: 'rgba(239, 68, 68, 0.1)',
-                  border: '1px solid rgba(239, 68, 68, 0.3)',
-                  color: '#b91c1c',
-                  fontSize: '0.85rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  marginBottom: '1.25rem',
-                }}
-              >
-                <AlertCircle size={18} />
-                <span>{errorMsg}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleInquirySubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  value={inquiry.name}
-                  onChange={(e) => setInquiry({ ...inquiry, name: e.target.value })}
-                  placeholder="e.g. John Doe"
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(23, 105, 224, 0.25)',
-                    fontSize: '0.9rem',
-                    outline: 'none',
-                    background: 'rgba(245, 250, 255, 0.6)',
-                  }}
-                />
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    value={inquiry.email}
-                    onChange={(e) => setInquiry({ ...inquiry, email: e.target.value })}
-                    placeholder="john@example.com"
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' }}>
+              {socialLinks.map((s) => {
+                const IconComp = s.icon;
+                return (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
-                      width: '100%',
-                      padding: '0.75rem 1rem',
-                      borderRadius: '12px',
-                      border: '1px solid rgba(23, 105, 224, 0.25)',
-                      fontSize: '0.9rem',
-                      outline: 'none',
-                      background: 'rgba(245, 250, 255, 0.6)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      textDecoration: 'none',
+                      color: 'var(--text-main)',
+                      padding: '0.75rem 0.95rem',
+                      borderRadius: '14px',
+                      background: 'rgba(255, 255, 255, 0.85)',
+                      border: '1px solid rgba(23, 105, 224, 0.12)',
+                      transition: 'transform 0.2s ease, border-color 0.2s',
                     }}
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-                    Mobile Number (Optional)
-                  </label>
-                  <input
-                    type="tel"
-                    value={inquiry.phone}
-                    onChange={(e) => setInquiry({ ...inquiry, phone: e.target.value })}
-                    placeholder="9876543210"
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem 1rem',
-                      borderRadius: '12px',
-                      border: '1px solid rgba(23, 105, 224, 0.25)',
-                      fontSize: '0.9rem',
-                      outline: 'none',
-                      background: 'rgba(245, 250, 255, 0.6)',
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.borderColor = s.color;
                     }}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-                  Inquiry Category
-                </label>
-                <select
-                  value={inquiry.subject}
-                  onChange={(e) => setInquiry({ ...inquiry, subject: e.target.value })}
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(23, 105, 224, 0.25)',
-                    fontSize: '0.9rem',
-                    outline: 'none',
-                    background: 'rgba(245, 250, 255, 0.6)',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <option value="Event Query">Event Clarification / Rules</option>
-                  <option value="Registration Help">Registration & Payment Help</option>
-                  <option value="Transport & Accommodation">Transport & Accommodation Query</option>
-                  <option value="Paper Submission">Thought Summit Paper Submission</option>
-                  <option value="Other">General Question</option>
-                </select>
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
-                  Message
-                </label>
-                <textarea
-                  rows={4}
-                  value={inquiry.message}
-                  onChange={(e) => setInquiry({ ...inquiry, message: e.target.value })}
-                  placeholder="Type your message or questions here..."
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(23, 105, 224, 0.25)',
-                    fontSize: '0.9rem',
-                    outline: 'none',
-                    background: 'rgba(245, 250, 255, 0.6)',
-                    fontFamily: 'inherit',
-                    resize: 'vertical',
-                  }}
-                />
-              </div>
-
-              <button type="submit" className="btn btn-primary" style={{ justifyContent: 'center' }}>
-                <Send size={16} />
-                <span>SEND MESSAGE</span>
-              </button>
-            </form>
-          </div>
-
-          {/* Social Channels & Official Campus Info */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            {/* Social Media Links Card */}
-            <div
-              className="glass-card"
-              style={{
-                padding: '2rem',
-                borderRadius: '24px',
-                border: '1.5px solid rgba(23, 105, 224, 0.16)',
-              }}
-            >
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.4rem' }}>
-                Social Channels & Community
-              </h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>
-                Connect with our delegate community and stay updated with live announcements:
-              </p>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
-                {socialLinks.map((s) => {
-                  const IconComp = s.icon;
-                  return (
-                    <a
-                      key={s.name}
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.borderColor = 'rgba(23, 105, 224, 0.12)';
+                    }}
+                  >
+                    <div
                       style={{
+                        width: '36px',
+                        height: '36px',
+                        borderRadius: '10px',
+                        background: `${s.color}18`,
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '0.75rem',
-                        textDecoration: 'none',
-                        color: 'var(--text-main)',
-                        padding: '0.65rem 0.85rem',
-                        borderRadius: '12px',
-                        background: 'rgba(255, 255, 255, 0.85)',
-                        border: '1px solid rgba(23, 105, 224, 0.12)',
-                        transition: 'transform 0.2s ease, border-color 0.2s',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.borderColor = s.color;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.borderColor = 'rgba(23, 105, 224, 0.12)';
+                        justifyContent: 'center',
+                        color: s.color,
+                        flexShrink: 0,
                       }}
                     >
-                      <div
-                        style={{
-                          width: '34px',
-                          height: '34px',
-                          borderRadius: '8px',
-                          background: `${s.color}18`,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: s.color,
-                          flexShrink: 0,
-                        }}
-                      >
-                        <IconComp />
+                      <IconComp />
+                    </div>
+                    <div style={{ overflow: 'hidden' }}>
+                      <div style={{ fontSize: '0.86rem', fontWeight: 700, whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
+                        {s.name}
                       </div>
-                      <div style={{ overflow: 'hidden' }}>
-                        <div style={{ fontSize: '0.85rem', fontWeight: 700, whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-                          {s.name}
-                        </div>
-                        <div style={{ fontSize: '0.74rem', color: 'var(--text-light)', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
-                          {s.handle}
-                        </div>
+                      <div style={{ fontSize: '0.74rem', color: 'var(--text-light)', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
+                        {s.handle}
                       </div>
-                    </a>
-                  );
-                })}
-              </div>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
+          </div>
 
-            {/* College Campus Address Card */}
-            <div
-              className="glass-card"
-              style={{
-                padding: '2rem',
-                borderRadius: '24px',
-                border: '1.5px solid rgba(23, 105, 224, 0.16)',
-                background: 'linear-gradient(145deg, #ffffff 0%, #f6fbff 100%)',
-              }}
-            >
+          {/* College Campus Address Card */}
+          <div
+            className="glass-card"
+            style={{
+              padding: '2.25rem',
+              borderRadius: '24px',
+              border: '1.5px solid rgba(23, 105, 224, 0.16)',
+              background: 'linear-gradient(145deg, #ffffff 0%, #f6fbff 100%)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
+            <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', color: 'var(--primary-blue)' }}>
-                <Building size={20} />
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-main)' }}>
-                  College Address & Location
+                <Building size={22} />
+                <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-main)' }}>
+                  College Address & Venue
                 </h4>
               </div>
-              <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.65, marginBottom: '1.5rem' }}>
                 <strong style={{ color: 'var(--text-main)' }}>Adhiparasakthi Engineering College</strong>
                 <br />
                 Department of Electronics and Communication Engineering (S.E.C.E.)
@@ -590,34 +371,91 @@ export default function ContactPage() {
                 <br />
                 Tamil Nadu – 603319, India.
                 <br />
-                <span style={{ fontSize: '0.8rem', color: 'var(--primary-blue)', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.84rem', color: 'var(--primary-blue)', fontWeight: 700, display: 'inline-block', marginTop: '0.4rem' }}>
                   📍 Venue for all events: APEC Central Library
                 </span>
               </div>
-
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a
-                  href="https://apec.edu.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary btn-sm"
-                  style={{ textDecoration: 'none' }}
-                >
-                  <Globe size={14} />
-                  <span>College Website</span>
-                  <ExternalLink size={12} />
-                </a>
-
-                <a
-                  href="mailto:sece@apec.edu.in"
-                  className="btn btn-secondary btn-sm"
-                  style={{ textDecoration: 'none' }}
-                >
-                  <Mail size={14} />
-                  <span>sece@apec.edu.in</span>
-                </a>
-              </div>
             </div>
+
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary btn-sm"
+                style={{ textDecoration: 'none' }}
+              >
+                <Navigation size={15} />
+                <span>Get Directions</span>
+                <ExternalLink size={12} />
+              </a>
+
+              <a
+                href="https://apec.edu.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary btn-sm"
+                style={{ textDecoration: 'none' }}
+              >
+                <Globe size={15} />
+                <span>apec.edu.in</span>
+                <ExternalLink size={12} />
+              </a>
+
+              <a
+                href="mailto:sece@apec.edu.in"
+                className="btn btn-secondary btn-sm"
+                style={{ textDecoration: 'none' }}
+              >
+                <Mail size={15} />
+                <span>sece@apec.edu.in</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Link to Google Form Registration */}
+        <div
+          className="glass-card"
+          style={{
+            padding: '2rem 2.5rem',
+            borderRadius: '24px',
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(23, 105, 224, 0.08) 100%)',
+            border: '1.5px solid rgba(16, 185, 129, 0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1.5rem',
+          }}
+        >
+          <div>
+            <div style={{ fontSize: '0.74rem', fontFamily: 'var(--font-mono)', color: '#059669', fontWeight: 800, marginBottom: '0.35rem' }}>
+              LOOKING TO REGISTER?
+            </div>
+            <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.2rem' }}>
+              Register for CHANNEL 2K27 via the Official Google Form
+            </h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+              Pass fee is ₹150. Access all technical & non-technical tracks, certificates, and dining.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
+            <Link to="/register" className="btn btn-primary">
+              <UserCheck size={16} />
+              <span>Go to Registration Page</span>
+            </Link>
+            <a
+              href={REGISTRATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+              style={{ textDecoration: 'none' }}
+            >
+              <span>Direct Google Form</span>
+              <ExternalLink size={14} />
+            </a>
           </div>
         </div>
       </div>

@@ -15,23 +15,7 @@ import Schedule from '../components/Schedule';
 
 export default function AgendaPage() {
   return (
-    <div className="page-transition" style={{ paddingTop: '5.5rem' }}>
-      {/* Page Title Header */}
-      <div className="section" style={{ paddingBottom: '0.5rem', paddingTop: '1.5rem' }}>
-        <div className="section-header" style={{ marginBottom: '1rem' }}>
-          <div className="section-pill">
-            <Calendar size={14} />
-            <span>SYMPOSIUM DAY ITINERARY</span>
-          </div>
-          <h1 className="section-title">
-            EVENT <span className="gradient-text">AGENDA</span>
-          </h1>
-          <p className="section-subtitle">
-            A comprehensive schedule of events, inaugurations, technical rounds, dining breaks, and valediction.
-          </p>
-        </div>
-      </div>
-
+    <div className="page-transition" style={{ paddingTop: '4rem' }}>
       {/* Main Schedule Timeline */}
       <Schedule />
 

@@ -14,22 +14,8 @@ import Events from '../components/Events';
 
 export default function EventsPage({ onOpenDetails }) {
   return (
-    <div className="page-transition" style={{ paddingTop: '5.5rem' }}>
-      {/* Page Title Header */}
-      <div className="section" style={{ paddingBottom: '0.5rem', paddingTop: '1.5rem' }}>
-        <div className="section-header" style={{ marginBottom: '1rem' }}>
-          <div className="section-pill">
-            <Cpu size={14} />
-            <span>NATIONAL SYMPOSIUM TRACKS</span>
-          </div>
-          <h1 className="section-title">
-            SYMPOSIUM <span className="gradient-text">EVENTS</span>
-          </h1>
-          <p className="section-subtitle">
-            Compete across technical and non-technical challenges. All events take place at the <strong>APEC Central Library</strong> on November 4, 2026.
-          </p>
-        </div>
-
+    <div className="page-transition" style={{ paddingTop: '5rem' }}>
+      <div className="section" style={{ paddingBottom: '0.5rem', paddingTop: '1rem' }}>
         {/* Global Event Notice Bar */}
         <div
           className="glass-card"
