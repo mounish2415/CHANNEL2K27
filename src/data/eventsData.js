@@ -10,6 +10,7 @@ export const technicalEvents = [
     teamSize: '1 – 5 Members',
     duration: '8 mins Presentation + 2 mins Q&A',
     image: '/images/thought_summit.jpg',
+    venue: 'APEC Central Library',
     topics: [
       'Artificial Intelligence & Machine Learning in Electronics',
       'VLSI Design & Embedded System Innovations',
@@ -39,6 +40,7 @@ export const technicalEvents = [
     feeText: 'INCLUDED IN ₹150 PACKAGE',
     teamSize: '1 – 2 Members',
     duration: '3 Challenge Rounds',
+    venue: 'APEC Central Library',
     image: '/images/designdash.jpg',
     topics: [
       'UI Recreation & Visual Accuracy',
@@ -70,6 +72,7 @@ export const nonTechnicalEvents = [
     feeText: 'INCLUDED IN SYMPOSIUM PASS',
     teamSize: 'Individual / Duo',
     duration: '45 mins (Multi-Round Visual Challenge)',
+    venue: 'APEC Central Library',
     image: '/images/connections.jpg',
     topics: [
       'Tech, Circuits & Semiconductor Innovations',
@@ -99,6 +102,7 @@ export const nonTechnicalEvents = [
     feeText: 'INCLUDED IN SYMPOSIUM PASS',
     teamSize: '2 – 3 Members',
     duration: '60 mins (Campus-wide Clue Hunt)',
+    venue: 'APEC Central Library',
     image: '/images/treasure_hunt.jpg',
     topics: [
       'Cipher Decryption & Circuit Riddles',

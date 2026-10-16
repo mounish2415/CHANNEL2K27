@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Terminal, Palette, Award, Sparkles, Eye, Zap, Layers } from 'lucide-react';
+import { Cpu, Terminal, Palette, Award, Sparkles, Eye, Zap, Layers, MapPin } from 'lucide-react';
 import { technicalEvents, nonTechnicalEvents } from '../data/eventsData';
 
 export default function Events({ onOpenDetails }) {
@@ -166,6 +166,9 @@ export default function Events({ onOpenDetails }) {
                     </span>
                     <span className="tech-badge">
                       <Layers size={12} /> {evt.duration}
+                    </span>
+                    <span className="tech-badge" style={{ color: 'var(--primary-blue)', borderColor: 'rgba(23, 105, 224, 0.25)' }}>
+                      <MapPin size={12} /> {evt.venue || 'APEC Central Library'}
                     </span>
                   </div>
                 </div>
@@ -357,6 +360,9 @@ export default function Events({ onOpenDetails }) {
                     </span>
                     <span className="tech-badge" style={{ color: 'var(--pink)', borderColor: 'rgba(233, 78, 255, 0.2)' }}>
                       <Layers size={12} /> {evt.duration}
+                    </span>
+                    <span className="tech-badge" style={{ color: 'var(--cyan)', borderColor: 'rgba(0, 153, 184, 0.25)' }}>
+                      <MapPin size={12} /> {evt.venue || 'APEC Central Library'}
                     </span>
                   </div>
                 </div>

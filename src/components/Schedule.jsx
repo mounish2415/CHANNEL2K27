@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Clock, Calendar } from 'lucide-react';
+import { Clock, Calendar, MapPin } from 'lucide-react';
 
 const agendaData = [
   {
@@ -8,8 +8,8 @@ const agendaData = [
     title: 'REGISTRATION AND WELCOME',
     subtitle: 'Participant Check-in, ID Verification and Welcome Kits',
     category: 'GENERAL',
-    venue: 'Main Foyer & Reception Lobby',
-    desc: 'Registration and welcome participant check-in, ID verification and welcome kits.',
+    venue: 'APEC Central Library – Reception Foyer',
+    desc: 'Registration and welcome participant check-in, ID verification and welcome kits at APEC Central Library.',
     accent: '#1769e0',
   },
   {
@@ -18,8 +18,8 @@ const agendaData = [
     title: 'INAUGURATION CEREMONY',
     subtitle: 'Grand Opening & Keynote Session',
     category: 'CEREMONY',
-    venue: 'Dr. V. Arunagiri Memorial Auditorium',
-    desc: 'Inauguration ceremony with dignitaries, lamp lighting, and presidential address.',
+    venue: 'APEC Central Library – Seminar & Audio-Visual Hall',
+    desc: 'Inauguration ceremony with dignitaries, lamp lighting, and presidential address at APEC Central Library.',
     accent: '#00b8d9',
   },
   {
@@ -28,8 +28,8 @@ const agendaData = [
     title: 'TEA BREAK',
     subtitle: 'Morning Refreshments & Informal Networking',
     category: 'BREAK',
-    venue: 'Auditorium Concourse',
-    desc: 'Tea break, refreshments and networking.',
+    venue: 'APEC Central Library – Refreshment Lounge',
+    desc: 'Tea break, refreshments and networking at APEC Central Library.',
     accent: '#f59e0b',
   },
   {
@@ -38,8 +38,8 @@ const agendaData = [
     title: 'TECHNICAL EVENTS',
     subtitle: 'Thought Summit and DesignDash',
     category: 'TECHNICAL',
-    venue: 'Hall A (Thought Summit) & Computing / Design Lab (DesignDash)',
-    desc: 'Technical events track featuring Thought Summit (Paper & Innovation Presentation) and DesignDash (UI/UX Challenge).',
+    venue: 'APEC Central Library – Hall 1 (Thought Summit) & Computing Lab (DesignDash)',
+    desc: 'Technical events track featuring Thought Summit (Paper Presentation) and DesignDash (UI/UX Challenge) at APEC Central Library.',
     accent: '#6c4dff',
   },
   {
@@ -48,7 +48,7 @@ const agendaData = [
     title: 'LUNCH BREAK',
     subtitle: 'Lunch and Networking',
     category: 'BREAK',
-    venue: 'APEC Dining Complex & Innovation Arena',
+    venue: 'APEC Central Library – Dining & Networking Concourse',
     desc: 'Lunch break, buffet dining, peer networking, and student project interactions.',
     accent: '#10b981',
   },
@@ -58,8 +58,8 @@ const agendaData = [
     title: 'NON-TECHNICAL EVENTS',
     subtitle: 'Connections and Treasure Hunt',
     category: 'NON-TECHNICAL',
-    venue: 'Seminar Hall 2 & Campus Grounds',
-    desc: 'Non-technical events track featuring Connections (Visual Clues & Lateral Thinking) and Treasure Hunt (Campus Mystery Decryption).',
+    venue: 'APEC Central Library – Activity Hall (Connections) & Library Grounds (Treasure Hunt)',
+    desc: 'Non-technical events track featuring Connections and Treasure Hunt based at APEC Central Library.',
     accent: '#e94eff',
   },
   {
@@ -68,7 +68,7 @@ const agendaData = [
     title: 'TEA BREAK',
     subtitle: 'Evening Refreshments',
     category: 'BREAK',
-    venue: 'Auditorium Concourse',
+    venue: 'APEC Central Library – Refreshment Lounge',
     desc: 'Tea break and afternoon refreshments.',
     accent: '#f59e0b',
   },
@@ -78,8 +78,8 @@ const agendaData = [
     title: 'VALEDICTORY CEREMONY',
     subtitle: 'Grand Prize Distribution & Valediction',
     category: 'CEREMONY',
-    venue: 'Dr. V. Arunagiri Memorial Auditorium',
-    desc: 'Valedictory ceremony, prize distribution for winners, shields, medals, and participation certificates.',
+    venue: 'APEC Central Library – Presentation Hall',
+    desc: 'Valedictory ceremony, prize distribution for winners, shields, medals, and participation certificates at APEC Central Library.',
     accent: '#1769e0',
   },
   {
@@ -88,8 +88,8 @@ const agendaData = [
     title: 'EVENT CONCLUSION',
     subtitle: 'Group Photographs and Departure',
     category: 'CEREMONY',
-    venue: 'Auditorium & College Front Lawn',
-    desc: 'Event conclusion, group photographs, official symposium closure, and departure.',
+    venue: 'APEC Central Library – Quadrangle',
+    desc: 'Event conclusion, group photographs, official symposium closure, and departure at APEC Central Library.',
     accent: '#8b5cf6',
   },
 ];
@@ -115,7 +115,7 @@ export default function Schedule() {
           EVENT <span className="gradient-text">AGENDA</span>
         </h2>
         <p className="section-subtitle">
-          Official timeline for CHANNEL 2K27 • Tuesday, November 3, 2026. Synchronized across all technical and non-technical venues.
+          Official timeline for CHANNEL 2K27 • Tuesday, November 3, 2026. All events hosted at <strong>APEC Central Library</strong>.
         </p>
 
         {/* Filter Pills */}
@@ -302,11 +302,30 @@ export default function Schedule() {
                     fontSize: '0.88rem',
                     color: 'var(--text-muted)',
                     lineHeight: 1.55,
-                    marginBottom: 0,
+                    marginBottom: '0.65rem',
                   }}
                 >
                   {item.desc}
                 </p>
+
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    fontSize: '0.78rem',
+                    fontFamily: 'var(--font-mono)',
+                    color: item.accent,
+                    background: `${item.accent}12`,
+                    padding: '0.25rem 0.65rem',
+                    borderRadius: '6px',
+                    border: `1px solid ${item.accent}30`,
+                    fontWeight: 600,
+                  }}
+                >
+                  <MapPin size={13} />
+                  <span>{item.venue}</span>
+                </div>
               </div>
             </div>
           ))}

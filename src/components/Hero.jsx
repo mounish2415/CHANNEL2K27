@@ -233,7 +233,7 @@ export default function Hero() {
                   Venue
                 </div>
                 <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
-                  APEC, Melmaruvathur
+                  APEC Central Library, Melmaruvathur
                 </div>
               </div>
             </div>

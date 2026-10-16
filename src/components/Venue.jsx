@@ -15,7 +15,7 @@ export default function Venue() {
           EVENT <span className="gradient-text">VENUE</span>
         </h2>
         <p className="section-subtitle">
-          Adhiparasakthi Engineering College is located in Melmaruvathur, Tamil Nadu, India.
+          All technical and non-technical events for CHANNEL 2K27 will be hosted at the <strong>APEC Central Library</strong>, Adhiparasakthi Engineering College.
         </p>
       </div>
 
@@ -47,7 +47,7 @@ export default function Venue() {
                   textTransform: 'uppercase',
                 }}
               >
-                // CAMPUS LOCATION
+                // SYMPOSIUM VENUE • ALL EVENTS
               </div>
 
               <h3
@@ -60,7 +60,7 @@ export default function Venue() {
                   marginBottom: '1.5rem',
                 }}
               >
-                Adhiparasakthi Engineering College is located in Melmaruvathur, Tamil Nadu, India.
+                APEC Central Library — Central Venue for All Events
               </h3>
 
               {/* Address & Coordinates Info Cards */}
@@ -113,6 +113,8 @@ export default function Venue() {
                       paddingLeft: '0.2rem',
                     }}
                   >
+                    <strong style={{ color: 'var(--primary-blue)' }}>APEC Central Library</strong>,<br />
+                    Adhiparasakthi Engineering College,<br />
                     SH 115, Melmaruvathur,<br />
                     Kancheepuram District,<br />
                     Tamil Nadu 603319, India

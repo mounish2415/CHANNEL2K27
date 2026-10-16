@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Trophy, Users, Clock, CheckCircle, Tag, ShieldAlert, UserCheck } from 'lucide-react';
+import { X, Trophy, Users, Clock, CheckCircle, Tag, ShieldAlert, UserCheck, MapPin } from 'lucide-react';
 
 export default function EventModal({ event, onClose }) {
   useEffect(() => {
@@ -114,7 +114,7 @@ export default function EventModal({ event, onClose }) {
                 backdropFilter: 'blur(8px)',
               }}
             >
-              EVENT {event.num} • {event.category}
+              EVENT {event.num} • {event.category} • APEC CENTRAL LIBRARY
             </div>
             <h2
               style={{
@@ -195,6 +195,44 @@ export default function EventModal({ event, onClose }) {
               </div>
               <div style={{ fontSize: '0.88rem', fontWeight: 800, color: 'var(--violet)' }}>
                 {event.duration}
+              </div>
+            </div>
+          </div>
+
+          {/* Venue Notice Banner */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.65rem',
+              padding: '0.75rem 1rem',
+              background: 'rgba(23, 105, 224, 0.08)',
+              border: '1px solid rgba(23, 105, 224, 0.22)',
+              borderRadius: '12px',
+              marginBottom: '1.5rem',
+            }}
+          >
+            <div
+              style={{
+                width: '30px',
+                height: '30px',
+                borderRadius: '8px',
+                background: 'rgba(23, 105, 224, 0.12)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--primary-blue)',
+                flexShrink: 0,
+              }}
+            >
+              <MapPin size={16} />
+            </div>
+            <div>
+              <div style={{ fontSize: '0.66rem', fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-light)', textTransform: 'uppercase' }}>
+                EVENT VENUE
+              </div>
+              <div style={{ fontSize: '0.92rem', fontWeight: 800, color: 'var(--text-main)' }}>
+                {event.venue || 'APEC Central Library'}
               </div>
             </div>
           </div>

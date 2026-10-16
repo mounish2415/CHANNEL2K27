@@ -193,6 +193,9 @@ export default function Footer() {
             </p>
 
             <div style={{ fontSize: '0.82rem', color: 'var(--text-main)', lineHeight: 1.5 }}>
+              <div style={{ marginBottom: '0.35rem', fontWeight: 700, color: 'var(--primary-blue)' }}>
+                📍 Venue: APEC Central Library
+              </div>
               <strong>Adhiparasakthi Engineering College</strong>
               <br />
               SH 115, Melmaruvathur, Kancheepuram District,
