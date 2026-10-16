@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Trophy, Users, Clock, CheckCircle, Tag, ShieldAlert, UserCheck, ExternalLink } from 'lucide-react';
-import { REGISTRATION_URL } from '../data/registrationConfig';
+import { X, Trophy, Users, Clock, CheckCircle, Tag, ShieldAlert, UserCheck } from 'lucide-react';
 
 export default function EventModal({ event, onClose }) {
   useEffect(() => {
@@ -17,6 +16,17 @@ export default function EventModal({ event, onClose }) {
   }, [onClose]);
 
   if (!event) return null;
+
+  const handleRegisterClick = (e) => {
+    e.preventDefault();
+    onClose();
+    setTimeout(() => {
+      const target = document.getElementById('register');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 120);
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
@@ -300,25 +310,22 @@ export default function EventModal({ event, onClose }) {
               <span>CLOSE</span>
             </button>
 
-            <a
-              href={REGISTRATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleRegisterClick}
               className="btn btn-primary"
               style={{
-                textDecoration: 'none',
                 background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                 borderColor: '#10b981',
                 boxShadow: '0 4px 14px rgba(16, 185, 129, 0.35)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
+                cursor: 'pointer',
               }}
             >
               <UserCheck size={18} />
               <span>REGISTER (₹150 PASS)</span>
-              <ExternalLink size={15} />
-            </a>
+            </button>
           </div>
         </div>
       </div>
