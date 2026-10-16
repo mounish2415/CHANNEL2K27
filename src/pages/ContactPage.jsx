@@ -403,12 +403,12 @@ export default function ContactPage() {
               </a>
 
               <a
-                href="mailto:sece@apec.edu.in"
+                href="mailto:events.ece.apec@gmail.com"
                 className="btn btn-secondary btn-sm"
                 style={{ textDecoration: 'none' }}
               >
                 <Mail size={15} />
-                <span>sece@apec.edu.in</span>
+                <span>events.ece.apec@gmail.com</span>
               </a>
             </div>
           </div>
@@ -434,7 +434,7 @@ export default function ContactPage() {
               LOOKING TO REGISTER?
             </div>
             <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.2rem' }}>
-              Register for CHANNEL 2K27 via the Official Google Form
+              Register for CHANNEL 2K27 Online
             </h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
               Pass fee is ₹150. Access all technical & non-technical tracks, certificates, and dining.
@@ -453,7 +453,7 @@ export default function ContactPage() {
               className="btn btn-secondary"
               style={{ textDecoration: 'none' }}
             >
-              <span>Direct Google Form</span>
+              <span>Open Registration</span>
               <ExternalLink size={14} />
             </a>
           </div>

@@ -92,7 +92,7 @@ export default function AgendaPage() {
                 <span>Valedictory & Awards (03:35 PM)</span>
               </div>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
-                Prizes, cash awards, certificates, and trophies will be handed over by College Management and Department Heads during the closing ceremony.
+                Cash Prizes & Certificate for Winner & Runner Up will be handed over by College Management and Department Heads during the closing ceremony.
               </p>
             </div>
           </div>

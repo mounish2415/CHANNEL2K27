@@ -25,7 +25,7 @@ export const technicalEvents = [
       'Evaluation criteria: Originality, Technical Depth, Feasibility, Clarity of Presentation, and Q&A handling.',
       'Judges decision will be final and binding.',
     ],
-    prizes: 'Cash Prizes for 1st & 2nd Place + Merit Certificates',
+    prizes: 'Cash Prizes & Certificate for Winner & Runner Up',
     coordinator: 'Student Coordinator: +91 9342620698',
     shortDesc:
       'Showcase your visionary engineering ideas, research papers, and technical prototypes in front of an esteemed panel of industry and academic experts.',
@@ -55,7 +55,7 @@ export const technicalEvents = [
       "Originality: Participants must create their own designs. Direct copying of other designers' work is not allowed.",
       'Tie-breakers will be decided based on design quality, creativity, usability, and completion speed.',
     ],
-    prizes: 'Cash Prizes for 1st & 2nd Place + Merit Certificates',
+    prizes: 'Cash Prizes & Certificate for Winner & Runner Up',
     shortDesc:
       'Step into the world of UI/UX design to recreate existing interfaces, rethink user experiences, and transform familiar app designs into creative, user-friendly digital experiences under a ticking clock.',
   },
@@ -87,7 +87,7 @@ export const nonTechnicalEvents = [
       'Use of mobile devices or internet search is strictly prohibited and results in immediate disqualification.',
       'Judges decision will be final and binding.',
     ],
-    prizes: 'Cash Prizes for 1st & 2nd Place + Merit Certificates',
+    prizes: 'Cash Prizes & Certificate for Winner & Runner Up',
     coordinator: 'Student Coordinator: +91 9342620698',
     shortDesc:
       'Put your lateral thinking and observation skills to the ultimate test! Connect disjointed image clues, decode visual riddles, and discover the hidden links before the buzzer sounds.',
@@ -116,7 +116,7 @@ export const nonTechnicalEvents = [
       'Tampering with other teams or clues results in immediate disqualification.',
       'The first team to decode all clues and retrieve the final artifact wins.',
     ],
-    prizes: 'Cash Prizes for 1st & 2nd Place + Merit Certificates',
+    prizes: 'Cash Prizes & Certificate for Winner & Runner Up',
     coordinator: 'Student Coordinator: +91 9944802235',
     shortDesc:
       'Crack cryptic codes, decode technical riddles, and race across the campus against the clock to unearth the hidden treasure.',

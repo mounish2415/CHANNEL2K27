@@ -367,8 +367,8 @@ export default function Footer() {
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-light)', fontFamily: 'var(--font-mono)' }}>
                   SYMPOSIUM EMAIL
                 </div>
-                <a href="mailto:channel2k27@apec.edu.in" style={{ color: 'var(--primary-blue)', textDecoration: 'none', fontWeight: 600 }}>
-                  channel2k27@apec.edu.in
+                <a href="mailto:events.ece.apec@gmail.com" style={{ color: 'var(--primary-blue)', textDecoration: 'none', fontWeight: 600 }}>
+                  events.ece.apec@gmail.com
                 </a>
               </div>
             </div>

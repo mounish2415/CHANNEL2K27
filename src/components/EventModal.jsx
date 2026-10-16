@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Trophy, Users, Clock, CheckCircle, Tag, ShieldAlert, UserCheck, MapPin } from 'lucide-react';
+import { X, Award, Users, Clock, CheckCircle, Tag, ShieldAlert, UserCheck, MapPin } from 'lucide-react';
 
 export default function EventModal({ event, onClose }) {
   useEffect(() => {
@@ -316,7 +316,7 @@ export default function EventModal({ event, onClose }) {
                 flexShrink: 0,
               }}
             >
-              <Trophy size={20} />
+              <Award size={20} />
             </div>
             <div>
               <div style={{ fontSize: '0.72rem', fontWeight: 800, color: '#b45309', fontFamily: 'var(--font-mono)', letterSpacing: '0.06em' }}>

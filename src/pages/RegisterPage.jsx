@@ -29,7 +29,7 @@ export default function RegisterPage() {
             SYMPOSIUM <span className="gradient-text">REGISTRATION</span>
           </h1>
           <p className="section-subtitle">
-            Register via the official Google Form below to reserve your delegate seat for CHANNEL 2K27.
+            Register below to reserve your delegate seat for CHANNEL 2K27.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export default function RegisterPage() {
                   'Full Dining (Lunch Buffet, Morning & Evening High Tea)',
                   'Symposium Kit, Delegate ID Badge & Folder',
                   'Accredited Anna University Participation Certificate',
-                  'Cash Prizes & Trophies for Event Winners',
+                  'Cash Prizes & Certificate for Winner & Runner Up',
                 ].map((perk, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.55rem' }}>
                     <CheckCircle2 size={15} color="#10b981" style={{ flexShrink: 0, marginTop: '3px' }} />
@@ -216,7 +216,7 @@ export default function RegisterPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
               <ShieldCheck size={20} />
               <span style={{ fontWeight: 800, fontSize: '0.92rem', letterSpacing: '0.02em' }}>
-                OFFICIAL GOOGLE REGISTRATION FORM
+                REGISTRATION PORTAL
               </span>
             </div>
 
@@ -287,7 +287,7 @@ export default function RegisterPage() {
               rel="noopener noreferrer"
               style={{ color: 'var(--primary-blue)', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.35rem' }}
             >
-              <span>Open directly in Google Forms</span>
+              <span>Open in Full Screen</span>
               <ExternalLink size={14} />
             </a>
           </div>

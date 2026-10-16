@@ -79,7 +79,7 @@ const agendaData = [
     subtitle: 'Grand Prize Distribution & Valediction',
     category: 'CEREMONY',
     venue: 'APEC Central Library – Presentation Hall',
-    desc: 'Valedictory ceremony, prize distribution for winners, shields, medals, and participation certificates at APEC Central Library.',
+    desc: 'Valedictory ceremony, Cash Prizes & Certificate for Winner & Runner Up, and participation certificates at APEC Central Library.',
     accent: '#1769e0',
   },
   {

@@ -116,7 +116,7 @@ export default function RegisterSection() {
                 'Participation in 1 Non-Technical Event (Connections or Treasure Hunt)',
                 'Full Dining (Morning Refreshments, Buffet Lunch & High Tea)',
                 'Official Symposium Kit, Delegate ID Badge & Folder',
-                'Merit Certificates & Cash Prizes for Winners (1st & 2nd Place)',
+                'Cash Prizes & Certificate for Winner & Runner Up',
                 'Authorized Participation Certificate for every registered delegate',
               ].map((perk, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.7rem' }}>
@@ -374,12 +374,12 @@ export default function RegisterSection() {
               </a>
 
               <a
-                href="mailto:channel2k27@apec.edu.in"
+                href="mailto:events.ece.apec@gmail.com"
                 className="btn btn-secondary"
                 style={{ justifyContent: 'center', textDecoration: 'none' }}
               >
                 <Mail size={16} />
-                <span>Email: channel2k27@apec.edu.in</span>
+                <span>Email: events.ece.apec@gmail.com</span>
               </a>
             </div>
 

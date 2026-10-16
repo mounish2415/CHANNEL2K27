@@ -84,7 +84,7 @@ export default function EventsPage({ onOpenDetails }) {
             {[
               { title: 'Pass Eligibility', text: 'A single ₹150 delegate pass permits entry to 1 Technical Event and 1 Non-Technical Event.' },
               { title: 'College ID Mandatory', text: 'All registered participants must carry a valid college identification card.' },
-              { title: 'Cash Prizes & Trophies', text: 'Winners and runners-up in each event will receive cash prizes, merit certificates, and trophies.' },
+              { title: 'Winner & Runner Up Awards', text: 'Cash Prizes & Certificate for Winner & Runner Up in each technical and non-technical event.' },
               { title: 'Participation Certificate', text: 'Every verified participant will receive an authorized certificate accredited by Anna University.' },
             ].map((rule, idx) => (
               <div
