@@ -22,6 +22,7 @@ export default function AboutPage() {
       {/* Institutional Highlights Grid */}
       <section className="section" style={{ paddingTop: '1rem', paddingBottom: '4rem' }}>
         <div
+          className="responsive-about-highlights-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -30,7 +31,7 @@ export default function AboutPage() {
           }}
         >
           <div
-            className="glass-card"
+            className="glass-card about-highlight-card"
             style={{
               padding: '2rem',
               borderRadius: '22px',
@@ -52,16 +53,16 @@ export default function AboutPage() {
             >
               <GraduationCap size={24} />
             </div>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.6rem' }}>
+            <h3 className="about-highlight-title" style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.6rem' }}>
               About S.E.C.E.
             </h3>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            <p className="about-highlight-desc" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               The Society of Electronics and Communication Engineering (S.E.C.E.) is the premier student and faculty body at APEC, committed to cultivating cutting-edge technical expertise, research aptitude, and industry-aligned skillsets through national symposiums, hackathons, and technical workshops.
             </p>
           </div>
 
           <div
-            className="glass-card"
+            className="glass-card about-highlight-card"
             style={{
               padding: '2rem',
               borderRadius: '22px',
@@ -83,16 +84,16 @@ export default function AboutPage() {
             >
               <Building2 size={24} />
             </div>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.6rem' }}>
+            <h3 className="about-highlight-title" style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.6rem' }}>
               Adhiparasakthi Engineering College
             </h3>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            <p className="about-highlight-desc" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               Established in 1984 under the benevolent guidance of Arulthiru Bangaru Adigalar, APEC is an Autonomous Institution accredited by NAAC with 'A' Grade, approved by AICTE, and permanently affiliated to Anna University, Chennai.
             </p>
           </div>
 
           <div
-            className="glass-card"
+            className="glass-card about-highlight-card"
             style={{
               padding: '2rem',
               borderRadius: '22px',
@@ -114,10 +115,10 @@ export default function AboutPage() {
             >
               <Award size={24} />
             </div>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.6rem' }}>
+            <h3 className="about-highlight-title" style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '0.6rem' }}>
               Purpose of the Symposium
             </h3>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            <p className="about-highlight-desc" style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
               CHANNEL 2K27 bridges theoretical concepts with real-world application. It offers aspiring engineers a high-visibility competitive stage to present original research, troubleshoot complex circuits, foster inter-collegiate fellowship, and win recognized accolades.
             </p>
           </div>
@@ -125,7 +126,7 @@ export default function AboutPage() {
 
         {/* Action Callout */}
         <div
-          className="glass-card"
+          className="glass-card about-cta-callout"
           style={{
             padding: '2.5rem',
             borderRadius: '24px',
@@ -139,10 +140,10 @@ export default function AboutPage() {
           }}
         >
           <div>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
+            <h3 className="about-cta-title" style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
               Explore the Competitive Events
             </h3>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)' }}>
+            <p className="about-cta-desc" style={{ fontSize: '0.92rem', color: 'var(--text-muted)' }}>
               Check out the technical presentation tracks, debugging challenges, and strategic games.
             </p>
           </div>

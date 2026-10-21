@@ -39,7 +39,7 @@ export default function RegisterSection() {
 
       {/* Main Glass Pass Container */}
       <div
-        className="glass-card"
+        className="glass-card register-card-padding"
         style={{
           maxWidth: '1060px',
           margin: '0 auto',
@@ -65,6 +65,7 @@ export default function RegisterSection() {
         />
 
         <div
+          className="register-pass-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
@@ -93,6 +94,7 @@ export default function RegisterSection() {
             </div>
 
             <h3
+              className="register-title-text"
               style={{
                 fontSize: 'clamp(1.5rem, 3vw, 2.1rem)',
                 fontWeight: 900,
@@ -105,7 +107,7 @@ export default function RegisterSection() {
               All-Inclusive Symposium Registration
             </h3>
 
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.6rem' }}>
+            <p className="register-body-text" style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.6rem' }}>
               Your ₹150 delegate pass entitles you to compete in both engineering tracks, relish fine dining refreshments, and receive verifiable Anna University affiliated certificates.
             </p>
 
@@ -147,6 +149,7 @@ export default function RegisterSection() {
           {/* Right Column: Deadline Alert & CTA Action Card */}
           <div>
             <div
+              className="register-action-box"
               style={{
                 background: '#ffffff',
                 border: '1.5px solid rgba(234, 88, 12, 0.25)',
@@ -193,7 +196,7 @@ export default function RegisterSection() {
                 href={REGISTRATION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary btn-lg"
+                className="btn btn-primary register-submit-btn"
                 style={{
                   width: '100%',
                   justifyContent: 'center',

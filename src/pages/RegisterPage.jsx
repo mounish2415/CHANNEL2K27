@@ -35,7 +35,7 @@ export default function RegisterPage() {
 
         {/* Pass Details & Direct Google Form Action Card */}
         <div
-          className="glass-card"
+          className="glass-card register-page-card"
           style={{
             maxWidth: '1060px',
             margin: '0 auto 2.5rem auto',
@@ -47,6 +47,7 @@ export default function RegisterPage() {
           }}
         >
           <div
+            className="register-page-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -75,14 +76,14 @@ export default function RegisterPage() {
                 <span>DELEGATE PASS // ₹{REGISTRATION_FEE_AMOUNT} PER PARTICIPANT</span>
               </div>
 
-              <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.45rem' }}>
+              <h2 className="register-page-heading" style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.45rem' }}>
                 All-Inclusive Symposium Delegate Access
               </h2>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: '1.25rem' }}>
+              <p className="register-page-desc" style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.55, marginBottom: '1.25rem' }}>
                 One ₹{REGISTRATION_FEE_AMOUNT} delegate pass entitles you to compete in both tracks, enjoy buffet dining, and receive Anna University accredited certification.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem' }}>
+              <div className="register-perks-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem' }}>
                 {[
                   '1 Technical Event (Thought Summit / DesignDash)',
                   '1 Non-Technical Event (Skribbl.io / Chess)',
@@ -101,6 +102,7 @@ export default function RegisterPage() {
 
             {/* Right Column: Deadline Alert & Primary CTA */}
             <div
+              className="register-page-action-box"
               style={{
                 background: '#ffffff',
                 border: '1.5px solid rgba(234, 88, 12, 0.25)',
@@ -189,7 +191,7 @@ export default function RegisterPage() {
 
         {/* Embedded Google Form Section */}
         <div
-          className="glass-card"
+          className="glass-card register-page-iframe-card"
           style={{
             maxWidth: '1060px',
             margin: '0 auto',
@@ -244,7 +246,7 @@ export default function RegisterPage() {
           </div>
 
           {/* Embedded Google Form iframe */}
-          <div style={{ position: 'relative', width: '100%', minHeight: '850px', background: '#fafbfc' }}>
+          <div className="register-form-iframe-wrap" style={{ position: 'relative', width: '100%', minHeight: '850px', background: '#fafbfc' }}>
             <iframe
               src={embeddedGoogleFormUrl}
               width="100%"
@@ -253,6 +255,7 @@ export default function RegisterPage() {
               marginHeight="0"
               marginWidth="0"
               onLoad={() => setIframeLoaded(true)}
+              className="register-form-iframe"
               style={{
                 width: '100%',
                 height: '950px',

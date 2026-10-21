@@ -18,7 +18,7 @@ export default function EventsPage({ onOpenDetails }) {
       <div className="section" style={{ paddingBottom: '0.5rem', paddingTop: '1rem' }}>
         {/* Global Event Notice Bar */}
         <div
-          className="glass-card"
+          className="glass-card events-notice-bar"
           style={{
             maxWidth: '920px',
             margin: '0 auto 2.5rem auto',
@@ -58,7 +58,7 @@ export default function EventsPage({ onOpenDetails }) {
       {/* Rules & Guidelines Summary */}
       <section className="section" style={{ paddingTop: '1rem', paddingBottom: '4.5rem' }}>
         <div
-          className="glass-card"
+          className="glass-card events-rules-box"
           style={{
             padding: '2.5rem',
             borderRadius: '24px',
@@ -74,6 +74,7 @@ export default function EventsPage({ onOpenDetails }) {
           </div>
 
           <div
+            className="responsive-rules-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -89,6 +90,7 @@ export default function EventsPage({ onOpenDetails }) {
             ].map((rule, idx) => (
               <div
                 key={idx}
+                className="events-rule-card"
                 style={{
                   padding: '1.2rem',
                   borderRadius: '14px',

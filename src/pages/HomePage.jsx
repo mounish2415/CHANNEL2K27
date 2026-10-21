@@ -84,6 +84,7 @@ export default function HomePage() {
         </div>
 
         <div
+          className="responsive-highlights-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -96,7 +97,7 @@ export default function HomePage() {
             return (
               <div
                 key={index}
-                className="glass-card hover-glow"
+                className="glass-card hover-glow highlight-card-padding"
                 style={{
                   padding: '2rem',
                   display: 'flex',
@@ -146,6 +147,7 @@ export default function HomePage() {
                   </div>
 
                   <h3
+                    className="highlight-card-title"
                     style={{
                       fontSize: '1.2rem',
                       fontWeight: 800,
@@ -157,6 +159,7 @@ export default function HomePage() {
                   </h3>
 
                   <p
+                    className="highlight-card-desc"
                     style={{
                       fontSize: '0.88rem',
                       color: 'var(--text-muted)',
@@ -192,7 +195,7 @@ export default function HomePage() {
 
         {/* Delegate Pass Teaser Banner */}
         <div
-          className="glass-card"
+          className="glass-card home-teaser-banner"
           style={{
             background: 'linear-gradient(135deg, rgba(23, 105, 224, 0.05) 0%, rgba(0, 153, 184, 0.08) 100%)',
             border: '1.5px solid rgba(23, 105, 224, 0.2)',
@@ -222,10 +225,10 @@ export default function HomePage() {
               <Award size={15} />
               <span>OFFICIAL REGISTRATION OPEN // ₹150 DELEGATE PASS</span>
             </div>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
+            <h3 className="home-teaser-title" style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
               Ready to Showcase Your Technical Skills?
             </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', maxWidth: '640px' }}>
+            <p className="home-teaser-desc" style={{ color: 'var(--text-muted)', fontSize: '0.92rem', maxWidth: '640px' }}>
               One pass gives you access to 1 technical event, 1 non-technical event, buffet lunch, symposium kit, and verifiable certificates.
             </p>
           </div>

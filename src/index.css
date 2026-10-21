@@ -423,10 +423,32 @@ textarea::placeholder {
   }
 }
 
-/* Media Queries */
+/* ==========================================================================
+   MOBILE & RESPONSIVE DESIGN SYSTEM (CHANNEL 2K27)
+   Breakpoints:
+     - Desktop: > 768px (Remains visually untouched)
+     - Tablet: 481px – 768px
+     - Standard Phone: 376px – 480px
+     - Small Phone: 320px – 375px
+   ========================================================================== */
+
+/* Prevent horizontal overflow across all screens */
+html, body, #root, .app-container, main {
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+/* Page transitions mobile padding */
+@media (max-width: 768px) {
+  .page-transition {
+    padding-top: clamp(4.4rem, 10vw, 4.8rem) !important;
+  }
+}
+
+/* ----------------- TABLET / SMALL LAPTOP (<= 992px) ----------------- */
 @media (max-width: 992px) {
   .section {
-    padding: 4rem 1.25rem;
+    padding: 3.75rem 1.25rem;
   }
   
   .section-title {
@@ -434,22 +456,933 @@ textarea::placeholder {
   }
 }
 
-@media (max-width: 640px) {
+/* ----------------- TABLETS & MOBILE PHONES (<= 768px) ----------------- */
+@media (max-width: 768px) {
+  /* Global Layout & Padding Reset */
   .section {
-    padding: 3.2rem 1rem;
+    padding: 2.5rem 1rem !important;
   }
   
+  .section-wide {
+    padding: 2.5rem 1rem !important;
+  }
+  
+  .section-header {
+    margin-bottom: 1.75rem !important;
+    max-width: 100% !important;
+  }
+  
+  /* Small labels and captions: 11–13px */
+  .section-pill {
+    font-size: 0.72rem !important; /* ~11.5px */
+    padding: 0.35rem 0.8rem !important;
+    margin-bottom: 0.75rem !important;
+    letter-spacing: 0.06em !important;
+  }
+  
+  /* Section Headings: 22–28px */
   .section-title {
-    font-size: 1.85rem;
+    font-size: clamp(1.4rem, 5.2vw, 1.75rem) !important; /* 22.4px to 28px */
+    margin-bottom: 0.65rem !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
   }
-
+  
+  /* Section Subtitles: 13–15px */
   .section-subtitle {
-    font-size: 0.95rem;
+    font-size: clamp(0.82rem, 3.2vw, 0.94rem) !important; /* 13.1px to 15px */
+    line-height: 1.55 !important;
+    max-width: 100% !important;
   }
 
+  /* Buttons: 13–15px */
   .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.65rem 1.25rem !important;
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important; /* 13.1px to 14.7px */
+    border-radius: 12px !important;
+    gap: 0.5rem !important;
+    min-height: 42px !important;
+  }
+
+  .btn-sm {
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.8rem !important; /* 12.8px to 13px */
+    border-radius: 9px !important;
+    min-height: 36px !important;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1.35rem !important;
+    font-size: 0.92rem !important; /* ~14.7px */
+    border-radius: 12px !important;
+  }
+
+  /* Form Labels & Inputs: 14–16px */
+  input, select, textarea {
+    font-size: 15px !important;
+  }
+  
+  label {
+    font-size: 14px !important;
+  }
+
+  /* Glass Cards Spacing */
+  .glass-card {
+    border-radius: 18px !important;
+  }
+
+  /* 1. NAVBAR & MOBILE DRAWER */
+  .brand-title-mobile {
+    font-size: clamp(1rem, 3.8vw, 1.15rem) !important; /* 16px to 18px */
+  }
+
+  .nav-drawer-box {
+    padding: 0.85rem !important;
+  }
+
+  /* Navbar links: 13–15px */
+  .nav-drawer-link {
+    font-size: 0.88rem !important; /* 14px */
+    padding: 0.6rem 0.85rem !important;
+    border-radius: 10px !important;
+  }
+
+  .nav-drawer-btn {
+    font-size: 0.88rem !important; /* 14px */
+    padding: 0.65rem 1rem !important;
+  }
+
+  /* 2. HERO COMPONENT */
+  .hero-section {
+    padding-top: 4.8rem !important;
+    padding-bottom: 2rem !important;
+    min-height: auto !important;
+  }
+
+  /* Small labels & badges: 11–13px */
+  .hero-pill {
+    font-size: 0.72rem !important; /* 11.5px */
+    padding: 0.35rem 0.85rem !important;
+    margin-bottom: 0.85rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Main hero heading “CHANNEL 2K27”: 36–44px */
+  .hero-title {
+    font-size: clamp(2.25rem, 8.5vw, 2.75rem) !important; /* 36px to 44px */
+    margin-bottom: 0.65rem !important;
+    line-height: 1.1 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Hero subtitle/tagline: 14–16px */
+  .hero-tagline {
+    font-size: clamp(0.88rem, 3.6vw, 1rem) !important; /* 14px to 16px */
+    margin-bottom: 0.85rem !important;
+    gap: 0.4rem !important;
+  }
+
+  /* Body text & descriptions: 13–15px */
+  .hero-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem) !important; /* 13.1px to 14.7px */
+    line-height: 1.55 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-badges-container {
+    gap: 0.6rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hero-badge-card {
+    padding: 0.6rem 0.85rem !important;
+    border-radius: 12px !important;
+    gap: 0.6rem !important;
+  }
+
+  .hero-badge-title {
+    font-size: 0.7rem !important; /* ~11.2px */
+  }
+
+  .hero-badge-val {
+    font-size: 0.84rem !important; /* ~13.4px */
+  }
+
+  .hero-cta-group {
+    gap: 0.65rem !important;
+    margin-bottom: 1.75rem !important;
+    width: 100% !important;
+  }
+
+  .hero-accreditation {
+    font-size: 0.72rem !important; /* ~11.5px */
+    padding: 0.5rem 0.85rem !important;
+    gap: 0.4rem 0.8rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* 3. COUNTDOWN COMPONENT */
+  .countdown-wrap {
+    margin: -1rem auto 2rem auto !important;
+    padding: 0 0.85rem !important;
+  }
+
+  .countdown-box-card {
+    padding: 1.25rem 0.95rem !important;
+    border-radius: 18px !important;
+  }
+
+  .countdown-header-flex {
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.75rem !important;
+    gap: 0.65rem !important;
+  }
+
+  .countdown-title-text {
+    font-size: clamp(1.05rem, 4vw, 1.2rem) !important; /* ~16.8px to 19.2px */
+  }
+
+  .countdown-grid-wrap {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.45rem !important;
+  }
+
+  .countdown-grid-box {
+    padding: 0.75rem 0.25rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Countdown numbers: 22–28px */
+  .countdown-digit-num {
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem) !important; /* 22.4px to 28px */
+    margin-bottom: 0.2rem !important;
+  }
+
+  /* Small labels & captions: 11–13px */
+  .countdown-unit-label {
+    font-size: 0.7rem !important; /* ~11.2px */
+    letter-spacing: 0.08em !important;
+  }
+
+  .countdown-ic-code {
+    font-size: 0.52rem !important;
+  }
+
+  .countdown-status-strip {
+    margin-top: 1rem !important;
+    padding-top: 0.85rem !important;
+    font-size: 0.76rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+  }
+
+  /* 4. HOME PAGE & HIGHLIGHTS */
+  .responsive-highlights-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .highlight-card-padding {
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  /* Event / Highlight card headings: 16–20px */
+  .highlight-card-title {
+    font-size: clamp(1.05rem, 4vw, 1.2rem) !important; /* 16.8px to 19.2px */
+    margin-bottom: 0.45rem !important;
+  }
+
+  /* Body text and descriptions: 13–15px */
+  .highlight-card-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+    line-height: 1.55 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .home-teaser-banner {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .home-teaser-title {
+    font-size: clamp(1.15rem, 4.5vw, 1.35rem) !important; /* 18.4px to 21.6px */
+    margin-bottom: 0.35rem !important;
+  }
+
+  .home-teaser-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+    line-height: 1.5 !important;
+  }
+
+  /* 5. ASSOCIATIONS / PARTNERS */
+  .responsive-partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+    gap: 0.85rem !important;
+  }
+
+  .partner-card-box {
+    padding: 1.15rem 0.85rem !important;
+    border-radius: 16px !important;
+  }
+
+  .partner-emblem-box {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 12px !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .partner-name-text {
+    font-size: clamp(0.92rem, 3.6vw, 1.05rem) !important; /* ~14.7px to 16.8px */
+    margin-bottom: 0.15rem !important;
+  }
+
+  .partner-tagline-text {
+    font-size: clamp(0.7rem, 2.5vw, 0.78rem) !important; /* ~11.2px to 12.5px */
+    line-height: 1.35 !important;
+  }
+
+  /* 6. ABOUT COMPONENT & ABOUT PAGE */
+  .about-narrative-card {
+    padding: 1.25rem 1rem !important;
+    margin-bottom: 1.75rem !important;
+    border-radius: 18px !important;
+  }
+
+  .responsive-about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Body text and descriptions: 13–15px */
+  .about-narrative-text {
+    font-size: clamp(0.88rem, 3.6vw, 0.98rem) !important; /* 14px to 15.7px */
+    line-height: 1.65 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .about-accred-card {
+    padding: 1.15rem 0.95rem !important;
+    border-radius: 16px !important;
+  }
+
+  .responsive-pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .about-pillar-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  /* Event card headings: 16–20px */
+  .about-pillar-title {
+    font-size: clamp(1.05rem, 4.2vw, 1.25rem) !important; /* 16.8px to 20px */
+    margin-bottom: 0.35rem !important;
+  }
+
+  .about-pillar-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+    line-height: 1.55 !important;
+  }
+
+  .responsive-about-highlights-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .about-highlight-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .about-highlight-title {
+    font-size: clamp(1.05rem, 4vw, 1.18rem) !important; /* 16.8px to 18.9px */
+    margin-bottom: 0.45rem !important;
+  }
+
+  .about-highlight-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+    line-height: 1.55 !important;
+  }
+
+  .about-cta-callout {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .about-cta-title {
+    font-size: clamp(1.15rem, 4.5vw, 1.35rem) !important; /* 18.4px to 21.6px */
+    margin-bottom: 0.35rem !important;
+  }
+
+  .about-cta-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+  }
+
+  /* 7. EVENTS COMPONENT & EVENTS PAGE */
+  .events-notice-bar {
+    padding: 0.85rem 1rem !important;
+    border-radius: 14px !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .responsive-events-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .event-card-img-wrap {
+    height: 180px !important;
+  }
+
+  .event-card-content-wrap {
+    padding: 1.15rem 1rem 0.85rem 1rem !important;
+  }
+
+  /* Event card headings: 16–20px */
+  .event-card-heading {
+    font-size: clamp(1.05rem, 4.2vw, 1.22rem) !important; /* 16.8px to 19.5px */
+    margin-bottom: 0.35rem !important;
+  }
+
+  /* Body text & descriptions: 13–15px */
+  .event-card-desc-text {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+    line-height: 1.55 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Small labels and captions: 11–13px */
+  .tech-badge {
+    font-size: 0.72rem !important; /* ~11.5px */
+    padding: 0.25rem 0.55rem !important;
+  }
+
+  .events-rules-box {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .responsive-rules-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .events-rule-card {
+    padding: 1rem 0.85rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Event Modal */
+  .modal-overlay {
+    padding: 0.75rem 0.5rem !important;
+  }
+
+  .modal-content {
+    border-radius: 18px !important;
+    max-height: 92vh !important;
+  }
+
+  .modal-img-wrap {
+    height: 160px !important;
+  }
+
+  .modal-title-text {
+    font-size: clamp(1.15rem, 4.8vw, 1.35rem) !important; /* 18.4px to 21.6px */
+  }
+
+  .modal-body-padding {
+    padding: 1rem 0.85rem !important;
+  }
+
+  /* 8. SCHEDULE COMPONENT & AGENDA PAGE */
+  .agenda-timeline-track {
+    left: 17px !important;
+  }
+
+  .agenda-timeline-item {
+    gap: 0.75rem !important;
+  }
+
+  .agenda-node-circle {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+  }
+
+  .agenda-node-dot {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .agenda-card-box {
+    padding: 1rem 0.85rem !important;
+    border-radius: 16px !important;
+  }
+
+  /* Event card headings: 16–20px */
+  .agenda-card-title-text {
+    font-size: clamp(1rem, 3.8vw, 1.12rem) !important; /* 16px to 17.9px */
+  }
+
+  .agenda-card-subtitle-text {
+    font-size: clamp(0.78rem, 2.8vw, 0.85rem) !important; /* 12.5px to 13.6px */
+  }
+
+  /* Body text & descriptions: 13–15px */
+  .agenda-card-desc-text {
+    font-size: clamp(0.82rem, 3.2vw, 0.88rem) !important; /* 13.1px to 14.1px */
+    line-height: 1.5 !important;
+  }
+
+  .agenda-notes-box {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .responsive-agenda-notes-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .agenda-note-card {
+    padding: 1rem 0.85rem !important;
+    border-radius: 14px !important;
+  }
+
+  /* 9. TEAM COMPONENT & TEAM PAGE */
+  .responsive-team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+
+  .team-card-box {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .team-avatar-circle {
+    width: 54px !important;
+    height: 54px !important;
+    font-size: 1.2rem !important;
+    border-radius: 14px !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Event card headings / names: 16–20px */
+  .team-member-name {
+    font-size: clamp(1.05rem, 4.2vw, 1.2rem) !important; /* 16.8px to 19.2px */
+    margin-bottom: 0.25rem !important;
+  }
+
+  .team-member-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.88rem) !important; /* 13.1px to 14.1px */
+    line-height: 1.5 !important;
+  }
+
+  .team-committee-heading {
+    font-size: clamp(1.35rem, 5vw, 1.65rem) !important; /* 21.6px to 26.4px */
+    margin-bottom: 0.4rem !important;
+  }
+
+  .responsive-committee-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+
+  .committee-card-box {
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .committee-title-text {
+    font-size: clamp(0.96rem, 3.6vw, 1.1rem) !important; /* 15.4px to 17.6px */
+  }
+
+  .team-cta-box {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .team-cta-title {
+    font-size: clamp(1.15rem, 4.5vw, 1.35rem) !important; /* 18.4px to 21.6px */
+    margin-bottom: 0.35rem !important;
+  }
+
+  .team-cta-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+  }
+
+  /* 10. VENUE COMPONENT & VENUE PAGE */
+  .responsive-venue-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .venue-info-padding {
+    padding: 1.35rem 1rem !important;
+  }
+
+  .venue-heading-text {
+    font-size: clamp(1.15rem, 4.5vw, 1.35rem) !important; /* 18.4px to 21.6px */
+    margin-bottom: 0.85rem !important;
+  }
+
+  .venue-map-iframe {
+    min-height: 250px !important;
+    height: 250px !important;
+    border-radius: 14px !important;
+  }
+
+  .venue-logistics-card {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .responsive-venue-facilities-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .venue-facility-card {
+    padding: 1.1rem 0.85rem !important;
+    border-radius: 14px !important;
+  }
+
+  .venue-facility-title {
+    font-size: clamp(0.96rem, 3.6vw, 1.05rem) !important; /* 15.4px to 16.8px */
+    margin-bottom: 0.35rem !important;
+  }
+
+  .venue-facility-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.88rem) !important; /* 13.1px to 14.1px */
+    line-height: 1.5 !important;
+  }
+
+  /* 11. REGISTER COMPONENT & REGISTER PAGE */
+  .register-card-padding {
+    padding: 1.35rem 1rem !important;
+    border-radius: 20px !important;
+  }
+
+  .register-pass-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .register-perks-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  .register-title-text {
+    font-size: clamp(1.2rem, 4.8vw, 1.45rem) !important; /* 19.2px to 23.2px */
+    margin-bottom: 0.5rem !important;
+  }
+
+  .register-body-text {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+    line-height: 1.55 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .register-action-box {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+  }
+
+  .register-submit-btn {
+    font-size: 0.92rem !important; /* ~14.7px */
+    padding: 0.85rem 1.25rem !important;
+    border-radius: 12px !important;
+  }
+
+  .register-page-card {
+    padding: 1.35rem 1rem !important;
+    border-radius: 20px !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .register-page-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .register-page-heading {
+    font-size: clamp(1.2rem, 4.8vw, 1.45rem) !important; /* 19.2px to 23.2px */
+    margin-bottom: 0.4rem !important;
+  }
+
+  .register-page-desc {
+    font-size: clamp(0.82rem, 3.2vw, 0.9rem) !important; /* 13.1px to 14.4px */
+    line-height: 1.55 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .register-page-action-box {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+  }
+
+  .register-page-iframe-card {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  .register-form-iframe-wrap {
+    min-height: 700px !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .register-form-iframe {
+    width: 100% !important;
+    height: 750px !important;
+  }
+
+  /* 12. CONTACT PAGE */
+  .responsive-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .contact-card-box {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .contact-name-text {
+    font-size: clamp(1.05rem, 4.2vw, 1.25rem) !important; /* 16.8px to 20px */
+    margin-bottom: 0.25rem !important;
+  }
+
+  .contact-social-address-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .contact-social-card,
+  .contact-address-card,
+  .contact-cta-card {
+    padding: 1.35rem 1rem !important;
+    border-radius: 18px !important;
+  }
+
+  .contact-social-items-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+
+  /* 13. FOOTER */
+  .footer-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .footer-brand-title {
+    font-size: clamp(1.05rem, 3.8vw, 1.2rem) !important; /* 16.8px to 19.2px */
+  }
+
+  /* Footer text: 12–14px */
+  .footer-body-text {
+    font-size: clamp(0.78rem, 2.8vw, 0.86rem) !important; /* 12.5px to 13.8px */
+    line-height: 1.5 !important;
+  }
+
+  .footer-social-chip {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.74rem !important; /* ~11.8px */
+  }
+
+  .footer-bottom-flex {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+    font-size: 0.76rem !important; /* ~12.2px */
+    padding-top: 1.25rem !important;
+  }
+}
+
+/* ----------------- STANDARD PHONES (376px – 480px) ----------------- */
+@media (max-width: 480px) {
+  /* Main hero heading “CHANNEL 2K27”: 36–44px */
+  .hero-title {
+    font-size: clamp(2.15rem, 8.8vw, 2.45rem) !important; /* 34.4px to 39.2px */
+  }
+
+  /* Hero subtitle/tagline: 14–16px */
+  .hero-tagline {
+    font-size: 0.92rem !important; /* ~14.7px */
+  }
+
+  .hero-cta-group .btn {
+    width: 100% !important;
+  }
+
+  .hero-badges-container {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .hero-badge-card {
+    width: 100% !important;
+  }
+
+  /* Section Headings: 22–28px */
+  .section-title {
+    font-size: 1.55rem !important; /* 24.8px */
+  }
+
+  .section {
+    padding: 2.2rem 0.85rem !important;
+  }
+
+  .section-wide {
+    padding: 2.2rem 0.85rem !important;
+  }
+
+  .countdown-grid-wrap {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.32rem !important;
+  }
+
+  .countdown-grid-box {
+    padding: 0.65rem 0.15rem !important;
+  }
+
+  /* Countdown numbers: 22–28px */
+  .countdown-digit-num {
+    font-size: 1.5rem !important; /* 24px */
+  }
+
+  /* Small labels: 11–13px */
+  .countdown-unit-label {
+    font-size: 0.68rem !important; /* 10.9px */
+  }
+
+  .countdown-title-text {
+    font-size: 1.05rem !important; /* 16.8px */
+  }
+
+  .brand-title-mobile {
+    font-size: 1.05rem !important;
+  }
+
+  /* Event card headings: 16–20px */
+  .event-card-heading {
+    font-size: 1.12rem !important; /* ~18px */
+  }
+
+  /* Buttons: 13–15px */
+  .btn {
+    font-size: 0.88rem !important; /* 14px */
+  }
+}
+
+/* ----------------- SMALL PHONES (320px – 375px) ----------------- */
+@media (max-width: 375px) {
+  .section {
+    padding: 1.85rem 0.75rem !important;
+  }
+
+  .section-wide {
+    padding: 1.85rem 0.75rem !important;
+  }
+
+  /* Section Headings: 22–28px */
+  .section-title {
+    font-size: 1.4rem !important; /* 22.4px */
+  }
+
+  /* Section Subtitles: 13–15px */
+  .section-subtitle {
+    font-size: 0.82rem !important; /* 13.1px */
+  }
+
+  /* Hero Title: 34–36px fits 320px without overflow */
+  .hero-title {
+    font-size: clamp(1.95rem, 9.2vw, 2.25rem) !important; /* 31.2px to 36px */
+  }
+
+  /* Hero subtitle/tagline: 14–16px */
+  .hero-tagline {
+    font-size: 0.88rem !important; /* 14px */
+  }
+
+  /* Body text and descriptions: 13–15px */
+  .hero-desc {
+    font-size: 0.82rem !important; /* 13.1px */
+  }
+
+  /* Countdown 2x2 grid for small phone screens */
+  .countdown-grid-wrap {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.45rem !important;
+  }
+
+  .countdown-grid-box {
+    padding: 0.7rem 0.35rem !important;
+  }
+
+  /* Countdown numbers: 22–28px */
+  .countdown-digit-num {
+    font-size: 1.45rem !important; /* 23.2px */
+  }
+
+  /* Small labels: 11–13px */
+  .countdown-unit-label {
+    font-size: 0.7rem !important; /* 11.2px */
+  }
+
+  /* Buttons: 13–15px */
+  .btn {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.84rem !important; /* 13.4px */
+  }
+
+  /* Event card headings: 16–20px */
+  .event-card-heading {
+    font-size: 1.05rem !important; /* 16.8px */
+  }
+
+  /* Body text & descriptions: 13–15px */
+  .event-card-desc-text {
+    font-size: 0.82rem !important; /* 13.1px */
+  }
+
+  .modal-title-text {
+    font-size: 1.15rem !important; /* 18.4px */
+  }
+
+  .register-title-text,
+  .register-page-heading {
+    font-size: 1.18rem !important; /* 18.9px */
+  }
+
+  .team-member-name {
+    font-size: 1.05rem !important; /* 16.8px */
+  }
+
+  .contact-name-text {
+    font-size: 1.05rem !important; /* 16.8px */
+  }
+
+  /* Footer text: 12–14px */
+  .footer-body-text {
+    font-size: 0.76rem !important; /* 12.2px */
   }
 }
 

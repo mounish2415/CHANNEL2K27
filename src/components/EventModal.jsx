@@ -41,7 +41,7 @@ export default function EventModal({ event, onClose }) {
         }}
       >
         {/* Modal Header with Image */}
-        <div style={{ position: 'relative', height: '220px', width: '100%' }}>
+        <div className="modal-img-wrap" style={{ position: 'relative', height: '220px', width: '100%' }}>
           <img
             src={event.image}
             alt={event.name}
@@ -117,6 +117,7 @@ export default function EventModal({ event, onClose }) {
               EVENT {event.num} • {event.category} • APEC CENTRAL LIBRARY
             </div>
             <h2
+              className="modal-title-text"
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 900,
@@ -134,9 +135,10 @@ export default function EventModal({ event, onClose }) {
         </div>
 
         {/* Modal Body */}
-        <div style={{ padding: '1.75rem', overflowY: 'auto' }}>
+        <div className="modal-body-padding" style={{ padding: '1.75rem', overflowY: 'auto' }}>
           {/* Quick Metrics Bar */}
           <div
+            className="modal-metrics-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',

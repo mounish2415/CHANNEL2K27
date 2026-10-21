@@ -19,7 +19,7 @@ export default function TeamPage() {
       {/* Support & Coordination Banner */}
       <section className="section" style={{ paddingTop: '1rem', paddingBottom: '4.5rem' }}>
         <div
-          className="glass-card"
+          className="glass-card team-cta-box"
           style={{
             padding: '2.5rem',
             borderRadius: '24px',
@@ -33,10 +33,10 @@ export default function TeamPage() {
           }}
         >
           <div>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
+            <h3 className="team-cta-title" style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
               Have Questions for the Committee?
             </h3>
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)' }}>
+            <p className="team-cta-desc" style={{ fontSize: '0.92rem', color: 'var(--text-muted)' }}>
               Feel free to reach out to our Faculty Convener or Student Secretary for event clarifications.
             </p>
           </div>

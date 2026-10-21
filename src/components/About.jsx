@@ -50,7 +50,7 @@ export default function About() {
 
       {/* Main Narrative Card with College Credentials */}
       <div
-        className="glass-card"
+        className="glass-card about-narrative-card"
         style={{
           padding: '2.5rem',
           marginBottom: '3rem',
@@ -58,6 +58,7 @@ export default function About() {
         }}
       >
         <div
+          className="responsive-about-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
@@ -80,6 +81,7 @@ export default function About() {
               // SYMPOSIUM OVERVIEW
             </div>
             <p
+              className="about-narrative-text"
               style={{
                 fontSize: '1.15rem',
                 lineHeight: 1.8,
@@ -98,6 +100,7 @@ export default function About() {
 
           {/* Right: Institutional Accreditation Credentials */}
           <div
+            className="about-accred-card"
             style={{
               background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 248, 255, 0.92) 100%)',
               border: '1px solid rgba(23, 105, 224, 0.22)',
@@ -175,6 +178,7 @@ export default function About() {
 
       {/* 3 Interactive Feature Cards */}
       <div
+        className="responsive-pillars-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -186,7 +190,7 @@ export default function About() {
           return (
             <div
               key={item.num}
-              className="glass-card"
+              className="glass-card about-pillar-card"
               style={{
                 padding: '2.2rem 1.8rem',
                 display: 'flex',
@@ -232,6 +236,7 @@ export default function About() {
                 </div>
 
                 <h3
+                  className="about-pillar-title"
                   style={{
                     fontSize: '1.35rem',
                     fontWeight: 800,
@@ -255,6 +260,7 @@ export default function About() {
                 </p>
 
                 <p
+                  className="about-pillar-desc"
                   style={{
                     fontSize: '0.88rem',
                     color: 'var(--text-muted)',

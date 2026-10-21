@@ -23,7 +23,7 @@ export default function VenuePage() {
       {/* Campus Facility & Arrival Checklist */}
       <section className="section" style={{ paddingTop: '1rem', paddingBottom: '4.5rem' }}>
         <div
-          className="glass-card"
+          className="glass-card venue-logistics-card"
           style={{
             padding: '2.5rem',
             borderRadius: '24px',
@@ -39,6 +39,7 @@ export default function VenuePage() {
           </div>
 
           <div
+            className="responsive-venue-facilities-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -47,6 +48,7 @@ export default function VenuePage() {
             }}
           >
             <div
+              className="venue-facility-card"
               style={{
                 padding: '1.25rem',
                 borderRadius: '16px',
@@ -54,15 +56,16 @@ export default function VenuePage() {
                 border: '1px solid rgba(23, 105, 224, 0.12)',
               }}
             >
-              <h4 style={{ fontSize: '1rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--primary-blue)' }}>
+              <h4 className="venue-facility-title" style={{ fontSize: '1rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--primary-blue)' }}>
                 🚗 Free Campus Parking
               </h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
+              <p className="venue-facility-desc" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
                 Designated safe two-wheeler and four-wheeler parking bays are available right beside the Main Administrative Block and Central Library entrance.
               </p>
             </div>
 
             <div
+              className="venue-facility-card"
               style={{
                 padding: '1.25rem',
                 borderRadius: '16px',
@@ -70,15 +73,16 @@ export default function VenuePage() {
                 border: '1px solid rgba(0, 153, 184, 0.15)',
               }}
             >
-              <h4 style={{ fontSize: '1rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--cyan)' }}>
+              <h4 className="venue-facility-title" style={{ fontSize: '1rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--cyan)' }}>
                 📶 High-Speed Campus Wi-Fi
               </h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
+              <p className="venue-facility-desc" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
                 High-speed wireless internet access will be available inside the APEC Central Library auditorium and computer labs for competition participants.
               </p>
             </div>
 
             <div
+              className="venue-facility-card"
               style={{
                 padding: '1.25rem',
                 borderRadius: '16px',
@@ -86,10 +90,10 @@ export default function VenuePage() {
                 border: '1px solid rgba(16, 185, 129, 0.15)',
               }}
             >
-              <h4 style={{ fontSize: '1rem', fontWeight: 800, marginBottom: '0.4rem', color: '#059669' }}>
+              <h4 className="venue-facility-title" style={{ fontSize: '1rem', fontWeight: 800, marginBottom: '0.4rem', color: '#059669' }}>
                 🧳 Help Desk & Luggage Cloakroom
               </h4>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
+              <p className="venue-facility-desc" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: 1.55 }}>
                 Outstation delegates traveling by train/bus can safely deposit travel bags and luggage at our volunteer-managed Reception Cloakroom.
               </p>
             </div>

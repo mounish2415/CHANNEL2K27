@@ -120,6 +120,7 @@ export default function Schedule() {
 
         {/* Filter Pills */}
         <div
+          className="agenda-filter-wrap"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -132,6 +133,7 @@ export default function Schedule() {
             <button
               key={cat}
               onClick={() => setFilterCategory(cat)}
+              className="agenda-filter-btn"
               style={{
                 padding: '0.45rem 1.15rem',
                 borderRadius: '9999px',
@@ -163,6 +165,7 @@ export default function Schedule() {
       >
         {/* Central Circuit Track (desktop) */}
         <div
+          className="agenda-timeline-track"
           style={{
             position: 'absolute',
             top: '20px',
@@ -180,6 +183,7 @@ export default function Schedule() {
             <div
               key={idx}
               id={`agenda-${item.time.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}
+              className="agenda-timeline-item"
               style={{
                 position: 'relative',
                 display: 'flex',
@@ -189,6 +193,7 @@ export default function Schedule() {
             >
               {/* Circuit Node Indicator */}
               <div
+                className="agenda-node-circle"
                 style={{
                   width: '56px',
                   height: '56px',
@@ -205,6 +210,7 @@ export default function Schedule() {
                 }}
               >
                 <div
+                  className="agenda-node-dot"
                   style={{
                     width: '18px',
                     height: '18px',
@@ -217,7 +223,7 @@ export default function Schedule() {
 
               {/* Event Schedule Card */}
               <div
-                className="glass-card"
+                className="glass-card agenda-card-box"
                 style={{
                   flex: 1,
                   padding: '1.6rem 1.8rem',
@@ -272,6 +278,7 @@ export default function Schedule() {
                 </div>
 
                 <h3
+                  className="agenda-card-title-text"
                   style={{
                     fontSize: '1.28rem',
                     fontWeight: 800,
@@ -285,6 +292,7 @@ export default function Schedule() {
 
                 {item.subtitle && (
                   <div
+                    className="agenda-card-subtitle-text"
                     style={{
                       fontSize: '0.88rem',
                       fontWeight: 700,
@@ -298,6 +306,7 @@ export default function Schedule() {
                 )}
 
                 <p
+                  className="agenda-card-desc-text"
                   style={{
                     fontSize: '0.88rem',
                     color: 'var(--text-muted)',

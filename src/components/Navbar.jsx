@@ -130,6 +130,7 @@ export default function Navbar() {
 
           <div>
             <div
+              className="brand-title-mobile"
               style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: '1.28rem',
@@ -253,6 +254,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div
           id="mobile-nav-drawer"
+          className="nav-drawer-box"
           style={{
             position: 'absolute',
             top: '100%',
@@ -275,6 +277,7 @@ export default function Navbar() {
               to={item.path}
               end={item.path === '/'}
               onClick={() => setMobileMenuOpen(false)}
+              className={({ isActive }) => `nav-drawer-link ${isActive ? 'active' : ''}`}
               style={({ isActive }) => ({
                 fontSize: '1rem',
                 fontWeight: 700,
@@ -304,7 +307,7 @@ export default function Navbar() {
           <Link
             to="/register"
             onClick={() => setMobileMenuOpen(false)}
-            className="btn btn-primary"
+            className="btn btn-primary nav-drawer-btn"
             style={{
               textDecoration: 'none',
               marginTop: '0.6rem',

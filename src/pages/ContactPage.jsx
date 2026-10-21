@@ -146,6 +146,7 @@ export default function ContactPage() {
 
         {/* Key Coordinators Grid */}
         <div
+          className="responsive-contact-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -156,7 +157,7 @@ export default function ContactPage() {
           {keyContacts.map((contact, idx) => (
             <div
               key={idx}
-              className="glass-card hover-glow"
+              className="glass-card hover-glow contact-card-box"
               style={{
                 padding: '2rem',
                 borderRadius: '24px',
@@ -186,7 +187,7 @@ export default function ContactPage() {
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
+                <h3 className="contact-name-text" style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
                   {contact.name}
                 </h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.5 }}>
@@ -239,6 +240,7 @@ export default function ContactPage() {
 
         {/* 2-Column: Social Channels & Campus Location Details */}
         <div
+          className="contact-social-address-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
@@ -248,7 +250,7 @@ export default function ContactPage() {
         >
           {/* Social Media Links Card */}
           <div
-            className="glass-card"
+            className="glass-card contact-social-card"
             style={{
               padding: '2.25rem',
               borderRadius: '24px',
@@ -262,7 +264,7 @@ export default function ContactPage() {
               Connect with our delegate community and stay updated with live announcements:
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' }}>
+            <div className="contact-social-items-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem' }}>
               {socialLinks.map((s) => {
                 const IconComp = s.icon;
                 return (
@@ -323,7 +325,7 @@ export default function ContactPage() {
 
           {/* College Campus Address Card */}
           <div
-            className="glass-card"
+            className="glass-card contact-address-card"
             style={{
               padding: '2.25rem',
               borderRadius: '24px',
@@ -395,7 +397,7 @@ export default function ContactPage() {
 
         {/* Quick Link to Google Form Registration */}
         <div
-          className="glass-card"
+          className="glass-card contact-cta-card"
           style={{
             padding: '2rem 2.5rem',
             borderRadius: '24px',

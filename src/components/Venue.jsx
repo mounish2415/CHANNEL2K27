@@ -28,13 +28,14 @@ export default function Venue() {
         }}
       >
         <div
+          className="responsive-venue-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
           }}
         >
           {/* Left Column: Campus Info & Address Details */}
-          <div style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="venue-info-padding" style={{ padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <div
                 style={{
@@ -51,6 +52,7 @@ export default function Venue() {
               </div>
 
               <h3
+                className="venue-heading-text"
                 style={{
                   fontSize: '1.45rem',
                   fontWeight: 900,
@@ -233,6 +235,7 @@ export default function Venue() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.3082536836696!2d79.82902347594954!3d12.428795726588264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5323bb699a7cd1%3A0x6b403f5723b72c9a!2sAdhiparasakthi%20Engineering%20College!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
+              className="venue-map-iframe"
               style={{
                 border: 0,
                 minHeight: '400px',

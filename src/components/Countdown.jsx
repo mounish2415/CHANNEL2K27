@@ -75,6 +75,7 @@ export default function Countdown() {
 
   return (
     <div
+      className="countdown-wrap"
       style={{
         position: 'relative',
         zIndex: 2,
@@ -84,7 +85,7 @@ export default function Countdown() {
       }}
     >
       <div
-        className="glass-card"
+        className="glass-card countdown-box-card"
         style={{
           padding: '2.5rem 2rem',
           borderRadius: '28px',
@@ -96,6 +97,7 @@ export default function Countdown() {
       >
         {/* Top Header */}
         <div
+          className="countdown-header-flex"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -120,6 +122,7 @@ export default function Countdown() {
                 justifyContent: 'center',
                 color: 'var(--primary-blue)',
                 boxShadow: '0 2px 10px rgba(23, 105, 224, 0.1)',
+                flexShrink: 0,
               }}
             >
               <Clock size={20} />
@@ -138,6 +141,7 @@ export default function Countdown() {
                 // REGISTRATION_GATEWAY • COUNTDOWN
               </div>
               <h2
+                className="countdown-title-text"
                 style={{
                   fontSize: 'clamp(1.25rem, 2.5vw, 1.8rem)',
                   fontWeight: 800,
@@ -169,6 +173,7 @@ export default function Countdown() {
 
         {/* Counter Semiconductor IC Blocks Grid */}
         <div
+          className="countdown-grid-wrap"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
@@ -178,6 +183,7 @@ export default function Countdown() {
           {timeUnits.map((unit, index) => (
             <div
               key={unit.label}
+              className="countdown-grid-box"
               style={{
                 background: '#ffffff',
                 border: `1.5px solid ${unit.color}35`,
@@ -217,6 +223,7 @@ export default function Countdown() {
 
               {/* Silicon IC Sub-label */}
               <div
+                className="countdown-ic-code"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: '0.62rem',
@@ -230,7 +237,7 @@ export default function Countdown() {
               </div>
 
               <div
-                className="mono"
+                className="mono countdown-digit-num"
                 style={{
                   fontSize: 'clamp(2.4rem, 4.5vw, 3.4rem)',
                   fontWeight: 900,
@@ -245,6 +252,7 @@ export default function Countdown() {
               </div>
 
               <div
+                className="countdown-unit-label"
                 style={{
                   fontSize: '0.75rem',
                   fontFamily: 'var(--font-mono)',
@@ -261,6 +269,7 @@ export default function Countdown() {
 
         {/* Bottom Status strip */}
         <div
+          className="countdown-status-strip"
           style={{
             marginTop: '1.75rem',
             paddingTop: '1.25rem',

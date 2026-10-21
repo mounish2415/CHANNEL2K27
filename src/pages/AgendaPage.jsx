@@ -22,7 +22,7 @@ export default function AgendaPage() {
       {/* Delegate Schedule Guide */}
       <section className="section" style={{ paddingTop: '1rem', paddingBottom: '4.5rem' }}>
         <div
-          className="glass-card"
+          className="glass-card agenda-notes-box"
           style={{
             padding: '2.5rem',
             borderRadius: '24px',
@@ -38,6 +38,7 @@ export default function AgendaPage() {
           </div>
 
           <div
+            className="responsive-agenda-notes-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -46,6 +47,7 @@ export default function AgendaPage() {
             }}
           >
             <div
+              className="agenda-note-card"
               style={{
                 padding: '1.25rem',
                 borderRadius: '16px',
@@ -63,6 +65,7 @@ export default function AgendaPage() {
             </div>
 
             <div
+              className="agenda-note-card"
               style={{
                 padding: '1.25rem',
                 borderRadius: '16px',
@@ -80,6 +83,7 @@ export default function AgendaPage() {
             </div>
 
             <div
+              className="agenda-note-card"
               style={{
                 padding: '1.25rem',
                 borderRadius: '16px',

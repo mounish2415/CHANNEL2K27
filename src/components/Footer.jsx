@@ -134,6 +134,7 @@ export default function Footer() {
       <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 1.5rem' }}>
         {/* Main Footer Grid */}
         <div
+          className="footer-main-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
@@ -162,6 +163,7 @@ export default function Footer() {
               </div>
               <div>
                 <div
+                  className="footer-brand-title"
                   style={{
                     fontFamily: 'var(--font-heading)',
                     fontSize: '1.35rem',
@@ -190,11 +192,11 @@ export default function Footer() {
               “Connect. Collaborate. Create.”
             </div>
 
-            <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+            <p className="footer-body-text" style={{ fontSize: '0.86rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
               National Level Technical Symposium organized by the Society of Electronics and Communication Engineering (S.E.C.E.).
             </p>
 
-            <div style={{ fontSize: '0.82rem', color: 'var(--text-main)', lineHeight: 1.5 }}>
+            <div className="footer-body-text" style={{ fontSize: '0.82rem', color: 'var(--text-main)', lineHeight: 1.5 }}>
               <div style={{ marginBottom: '0.35rem', fontWeight: 700, color: 'var(--primary-blue)' }}>
                 📍 Venue: APEC Central Library
               </div>
@@ -270,6 +272,7 @@ export default function Footer() {
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="footer-social-chip"
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -377,6 +380,7 @@ export default function Footer() {
 
         {/* Bottom Bar with Copyright & Scroll to Top */}
         <div
+          className="footer-bottom-flex"
           style={{
             paddingTop: '2rem',
             display: 'flex',

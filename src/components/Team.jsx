@@ -281,6 +281,7 @@ export default function Team() {
 
       {/* Primary Leadership Cards */}
       <div
+        className="responsive-team-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -292,7 +293,7 @@ export default function Team() {
         {coreTeam.map((member) => (
           <div
             key={member.name}
-            className="glass-card"
+            className="glass-card team-card-box"
             style={{
               padding: '2.2rem 1.8rem',
               borderRadius: '26px',
@@ -334,6 +335,7 @@ export default function Team() {
 
               {/* Avatar Initial Circle */}
               <div
+                className="team-avatar-circle"
                 style={{
                   width: '70px',
                   height: '70px',
@@ -355,6 +357,7 @@ export default function Team() {
               </div>
 
               <div
+                className="team-member-role"
                 style={{
                   fontSize: '0.78rem',
                   fontFamily: 'var(--font-mono)',
@@ -369,6 +372,7 @@ export default function Team() {
               </div>
 
               <h3
+                className="team-member-name"
                 style={{
                   fontSize: '1.4rem',
                   fontWeight: 900,
@@ -381,6 +385,7 @@ export default function Team() {
               </h3>
 
               <p
+                className="team-member-desc"
                 style={{
                   fontSize: '0.88rem',
                   color: 'var(--text-muted)',
@@ -468,6 +473,7 @@ export default function Team() {
           </div>
 
           <h3
+            className="team-committee-heading"
             style={{
               fontSize: '1.85rem',
               fontWeight: 900,
@@ -519,6 +525,7 @@ export default function Team() {
 
         {/* Committees Grid */}
         <div
+          className="responsive-committee-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
@@ -532,7 +539,7 @@ export default function Team() {
             return (
               <div
                 key={c.name}
-                className="glass-card"
+                className="glass-card committee-card-box"
                 style={{
                   padding: '1.8rem 1.6rem',
                   borderRadius: '22px',
@@ -565,6 +572,7 @@ export default function Team() {
 
                     <div>
                       <h4
+                        className="committee-title-text"
                         style={{
                           fontSize: '1.05rem',
                           fontWeight: 800,

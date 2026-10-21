@@ -6,6 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      className="hero-section"
       style={{
         position: 'relative',
         minHeight: '85vh',
@@ -29,6 +30,7 @@ export default function Hero() {
         >
           {/* Top Badge: S.E.C.E. & Symposium */}
           <div
+            className="hero-pill"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -59,6 +61,7 @@ export default function Hero() {
 
           {/* Main Futuristic Title */}
           <h1
+            className="hero-title"
             style={{
               fontSize: 'clamp(2.8rem, 6.5vw, 5.2rem)',
               fontWeight: 900,
@@ -82,6 +85,7 @@ export default function Hero() {
 
           {/* Tagline */}
           <p
+            className="hero-tagline"
             style={{
               fontSize: 'clamp(1.2rem, 2.4vw, 1.7rem)',
               fontWeight: 700,
@@ -102,6 +106,7 @@ export default function Hero() {
 
           {/* Organizer & College Info */}
           <div
+            className="hero-desc"
             style={{
               fontSize: '1rem',
               color: 'var(--text-muted)',
@@ -120,6 +125,7 @@ export default function Hero() {
 
           {/* Event Quick Info Badges (Date & Venue) */}
           <div
+            className="hero-badges-container"
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -130,6 +136,7 @@ export default function Hero() {
           >
             {/* Date Card */}
             <div
+              className="hero-badge-card"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -151,15 +158,16 @@ export default function Hero() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--cyan)',
+                  flexShrink: 0,
                 }}
               >
                 <Calendar size={20} />
               </div>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: 600, textTransform: 'uppercase' }}>
+                <div className="hero-badge-title" style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: 600, textTransform: 'uppercase' }}>
                   Event Date
                 </div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+                <div className="hero-badge-val" style={{ fontSize: '0.95rem', fontWeight: 800, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                   03 NOVEMBER 2026
                 </div>
               </div>
@@ -167,6 +175,7 @@ export default function Hero() {
 
             {/* Registration Deadline Card */}
             <div
+              className="hero-badge-card"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -188,15 +197,16 @@ export default function Hero() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: '#ea580c',
+                  flexShrink: 0,
                 }}
               >
                 <Clock size={20} />
               </div>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: 600, textTransform: 'uppercase' }}>
+                <div className="hero-badge-title" style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: 600, textTransform: 'uppercase' }}>
                   Registration Closes
                 </div>
-                <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#c2410c', fontFamily: 'var(--font-heading)' }}>
+                <div className="hero-badge-val" style={{ fontSize: '0.95rem', fontWeight: 800, color: '#c2410c', fontFamily: 'var(--font-heading)' }}>
                   01 NOVEMBER 2026
                 </div>
               </div>
@@ -204,6 +214,7 @@ export default function Hero() {
 
             {/* Venue Card */}
             <div
+              className="hero-badge-card"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -225,15 +236,16 @@ export default function Hero() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--violet)',
+                  flexShrink: 0,
                 }}
               >
                 <MapPin size={20} />
               </div>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: 600, textTransform: 'uppercase' }}>
+                <div className="hero-badge-title" style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: 600, textTransform: 'uppercase' }}>
                   Venue
                 </div>
-                <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
+                <div className="hero-badge-val" style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-main)', fontFamily: 'var(--font-heading)' }}>
                   APEC Central Library, Melmaruvathur
                 </div>
               </div>
@@ -242,6 +254,7 @@ export default function Hero() {
 
           {/* CTAs */}
           <div
+            className="hero-cta-group"
             style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -291,6 +304,7 @@ export default function Hero() {
 
           {/* Institutional Accreditation Pill Banner */}
           <div
+            className="hero-accreditation"
             style={{
               display: 'inline-flex',
               flexWrap: 'wrap',

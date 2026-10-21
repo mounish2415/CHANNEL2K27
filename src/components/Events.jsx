@@ -21,6 +21,7 @@ export default function Events({ onOpenDetails }) {
         </div>
 
         <div
+          className="responsive-events-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
@@ -40,7 +41,7 @@ export default function Events({ onOpenDetails }) {
             >
               <div>
                 {/* Event Image Banner */}
-                <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+                <div className="event-card-img-wrap" style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
                   <img
                     src={evt.image}
                     alt={evt.name}
@@ -117,6 +118,7 @@ export default function Events({ onOpenDetails }) {
                     }}
                   >
                     <h3
+                      className="event-card-heading"
                       style={{
                         color: '#ffffff',
                         fontSize: '1.45rem',
@@ -141,8 +143,9 @@ export default function Events({ onOpenDetails }) {
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: '1.6rem 1.6rem 1rem 1.6rem' }}>
+                <div className="event-card-content-wrap" style={{ padding: '1.6rem 1.6rem 1rem 1.6rem' }}>
                   <p
+                    className="event-card-desc-text"
                     style={{
                       fontSize: '0.92rem',
                       color: 'var(--text-muted)',
@@ -216,6 +219,7 @@ export default function Events({ onOpenDetails }) {
         </div>
 
         <div
+          className="responsive-events-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
@@ -235,7 +239,7 @@ export default function Events({ onOpenDetails }) {
             >
               <div>
                 {/* Event Image Banner */}
-                <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+                <div className="event-card-img-wrap" style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
                   <img
                     src={evt.image}
                     alt={evt.name}
@@ -312,6 +316,7 @@ export default function Events({ onOpenDetails }) {
                     }}
                   >
                     <h3
+                      className="event-card-heading"
                       style={{
                         color: '#ffffff',
                         fontSize: '1.45rem',
@@ -336,8 +341,9 @@ export default function Events({ onOpenDetails }) {
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: '1.6rem 1.6rem 1rem 1.6rem' }}>
+                <div className="event-card-content-wrap" style={{ padding: '1.6rem 1.6rem 1rem 1.6rem' }}>
                   <p
+                    className="event-card-desc-text"
                     style={{
                       fontSize: '0.92rem',
                       color: 'var(--text-muted)',

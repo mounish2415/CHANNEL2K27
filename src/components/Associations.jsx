@@ -77,6 +77,7 @@ export default function Associations() {
       </div>
 
       <div
+        className="responsive-partners-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -86,7 +87,7 @@ export default function Associations() {
         {partners.map((partner) => (
           <div
             key={partner.name}
-            className="glass-card"
+            className="glass-card partner-card-box"
             style={{
               padding: '1.5rem 1.25rem',
               display: 'flex',
@@ -99,6 +100,7 @@ export default function Associations() {
           >
             {/* Logo Emblem Icon */}
             <div
+              className="partner-emblem-box"
               style={{
                 width: '54px',
                 height: '54px',
@@ -139,6 +141,7 @@ export default function Associations() {
             </div>
 
             <div
+              className="partner-name-text"
               style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: '1.05rem',
@@ -151,6 +154,7 @@ export default function Associations() {
             </div>
 
             <div
+              className="partner-tagline-text"
               style={{
                 fontSize: '0.74rem',
                 color: 'var(--text-muted)',
