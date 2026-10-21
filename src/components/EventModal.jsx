@@ -242,7 +242,7 @@ export default function EventModal({ event, onClose }) {
             <h4 style={{ fontSize: '0.92rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.4rem' }}>
               About The Event
             </h4>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.65, whiteSpace: 'pre-line' }}>
               {event.shortDesc}
             </p>
           </div>
@@ -253,23 +253,47 @@ export default function EventModal({ event, onClose }) {
               <h4 style={{ fontSize: '0.92rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '0.6rem' }}>
                 Key Focus Areas
               </h4>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {event.topics.map((t, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      fontSize: '0.8rem',
-                      padding: '0.4rem 0.85rem',
-                      background: 'rgba(23, 105, 224, 0.08)',
-                      border: '1px solid rgba(23, 105, 224, 0.2)',
-                      borderRadius: '8px',
-                      color: 'var(--primary-blue)',
-                      fontWeight: 600,
-                    }}
-                  >
-                    • {t}
-                  </span>
-                ))}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {event.topics.map((t, idx) => {
+                  const colonIndex = t.indexOf(':');
+                  if (colonIndex !== -1) {
+                    const title = t.slice(0, colonIndex);
+                    const desc = t.slice(colonIndex + 1);
+                    return (
+                      <div
+                        key={idx}
+                        style={{
+                          fontSize: '0.84rem',
+                          padding: '0.6rem 0.85rem',
+                          background: 'rgba(23, 105, 224, 0.05)',
+                          border: '1px solid rgba(23, 105, 224, 0.15)',
+                          borderRadius: '8px',
+                          color: 'var(--text-muted)',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <strong style={{ color: 'var(--primary-blue)', fontWeight: 700 }}>• {title}:</strong>
+                        <span>{desc}</span>
+                      </div>
+                    );
+                  }
+                  return (
+                    <div
+                      key={idx}
+                      style={{
+                        fontSize: '0.84rem',
+                        padding: '0.5rem 0.85rem',
+                        background: 'rgba(23, 105, 224, 0.06)',
+                        border: '1px solid rgba(23, 105, 224, 0.2)',
+                        borderRadius: '8px',
+                        color: 'var(--primary-blue)',
+                        fontWeight: 600,
+                      }}
+                    >
+                      • {t}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}

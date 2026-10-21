@@ -56,7 +56,6 @@ export default function ContactPage() {
       role: 'Head of the Department',
       name: 'Mr. S. Prakash',
       dept: 'Assistant Professor & HOD – Department of ECE',
-      email: 'hod.ece@apec.edu.in',
       phone: null,
       accent: '#6c4dff',
       badge: 'DEPARTMENT LEAD',
@@ -67,7 +66,6 @@ export default function ContactPage() {
       dept: 'Assistant Professor – Department of ECE',
       phone: '+91 9944802235',
       cleanPhone: '919944802235',
-      email: 'vedasundaram@apec.edu.in',
       accent: '#1769e0',
       badge: 'FACULTY HELPLINE',
     },
@@ -77,7 +75,6 @@ export default function ContactPage() {
       dept: 'Final Year – Department of ECE',
       phone: '+91 9342620698',
       cleanPhone: '919342620698',
-      email: 'mounishkumar.ece@apec.edu.in',
       accent: '#00b8d9',
       badge: 'STUDENT HELPLINE',
     },
@@ -235,24 +232,6 @@ export default function ContactPage() {
                     <span>WhatsApp Inquiry</span>
                   </a>
                 )}
-
-                <a
-                  href={`mailto:${contact.email}`}
-                  style={{
-                    fontSize: '0.82rem',
-                    color: 'var(--primary-blue)',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.4rem',
-                    marginTop: '0.35rem',
-                    fontWeight: 600,
-                  }}
-                >
-                  <Mail size={14} />
-                  <span>{contact.email}</span>
-                </a>
               </div>
             </div>
           ))}

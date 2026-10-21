@@ -14,7 +14,7 @@ import { REGISTRATION_URL, REGISTRATION_DEADLINE_TEXT, REGISTRATION_FEE_AMOUNT }
 
 export default function RegisterPage() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  const embeddedGoogleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzfsX9piEjzStLXYPApE0Ah_ENW8Fodf111CYCQuf_XEUpxQ/viewform?embedded=true';
+  const embeddedGoogleFormUrl = REGISTRATION_URL;
 
   return (
     <div className="page-transition" style={{ paddingTop: '5.5rem' }}>

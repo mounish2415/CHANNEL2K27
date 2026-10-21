@@ -148,6 +148,7 @@ export default function Events({ onOpenDetails }) {
                       color: 'var(--text-muted)',
                       lineHeight: 1.6,
                       marginBottom: '1.25rem',
+                      whiteSpace: 'pre-line',
                     }}
                   >
                     {evt.shortDesc}
@@ -342,6 +343,7 @@ export default function Events({ onOpenDetails }) {
                       color: 'var(--text-muted)',
                       lineHeight: 1.6,
                       marginBottom: '1.25rem',
+                      whiteSpace: 'pre-line',
                     }}
                   >
                     {evt.shortDesc}

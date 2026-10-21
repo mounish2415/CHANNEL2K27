@@ -9,7 +9,6 @@ const coreTeam = [
     category: 'DEPARTMENT LEADERSHIP',
     badgeColor: '#6c4dff',
     avatarText: 'SP',
-    email: 'hod.ece@apec.edu.in',
   },
   {
     role: 'Convener – SECE',
@@ -17,7 +16,6 @@ const coreTeam = [
     designation: 'Assistant Professor – Department of ECE',
     phone: '+91 9944802235',
     cleanPhone: '919944802235',
-    email: 'vedasundaram@apec.edu.in',
     category: 'FACULTY COORDINATOR',
     badgeColor: '#1769e0',
     avatarText: 'PV',
@@ -28,7 +26,6 @@ const coreTeam = [
     designation: 'Final Year – Department of ECE',
     phone: '+91 9342620698',
     cleanPhone: '919342620698',
-    email: 'mounishkumar.ece@apec.edu.in',
     category: 'STUDENT LEADERSHIP',
     badgeColor: '#00b8d9',
     avatarText: 'MS',
