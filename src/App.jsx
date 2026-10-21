@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import CanvasBackground from './components/CanvasBackground';
-import CircuitTracer from './components/CircuitTracer';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EventModal from './components/EventModal';
@@ -40,9 +39,6 @@ export default function App() {
 
       {/* Background Circuit Grid Texture Overlay */}
       <div className="circuit-bg-overlay" />
-
-      {/* Floating Circuit Navigation HUD */}
-      <CircuitTracer />
 
       {/* Automatic Scroll To Top on Route Navigation */}
       <ScrollToTop />
